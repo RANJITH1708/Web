@@ -1,1 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjith Saila | Data & Business Analyst</title>
+    <meta name="description" content="A results-driven Data and Business Analyst with a Master's degree in Business Analytics and hands-on experience in predictive modeling, data visualization, and web development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        :root {
+            --bg-color: #0a0a1a;
+            --primary-color: #00f2ff;
+            --secondary-color: #8998b9;
+            --text-color: #e0e0e0;
+            --card-bg: rgba(20, 20, 40, 0.7);
+            --border-color: rgba(0, 242, 255, 0.2);
+            --glow-color: rgba(0, 242, 255, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 15% 50%, rgba(0, 242, 255, 0.08), transparent 35%),
+                              radial-gradient(circle at 85% 30%, rgba(137, 152, 185, 0.08), transparent 35%);
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* --- Header --- */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, height 0.3s ease;
+        }
+        .main-header.scrolled {
+             background: rgba(10, 10, 26, 0.95);
+        }
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; height: 70px; transition: height 0.3s ease; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
+        .main-nav ul { display: flex; list-style-type: none; }
+        .main-nav a { color: var(--text-color); text-decoration: none; padding: 0.5rem 1rem; transition: color 0.3s, text-shadow 0.3s; font-weight: 500;}
+        .main-nav a:hover, .main-nav a.active { color: var(--primary-color); text-shadow: 0 0 10px var(--glow-color); }
+
+        /* --- General Section Styling --- */
+        section { padding: 120px 0; }
+        .section-title {
+            text-align: center; font-size: 2.5rem; margin-bottom: 4rem; color: #fff;
+            font-weight: 600; position: relative;
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: -15px; left: 50%;
+            transform: translateX(-50%); width: 60px; height: 3px;
+            background: var(--primary-color); border-radius: 2px;
+        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh; display: flex; align-items: center; text-align: center;
+            padding-top: 70px; /* Offset for header */
+        }
+        #hero .container { max-width: 800px; }
+        #hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+        #hero h1 span.typing-text { color: var(--primary-color); }
+        #hero h1 .cursor { display: inline-block; background-color: var(--primary-color); width: 4px; margin-left: 8px; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        #hero .subtitle { font-size: 1.2rem; color: var(--secondary-color); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;}
+        .social-links { display: flex; justify-content: center; align-items: center; gap: 1.5rem; }
+        .social-links a { color: var(--secondary-color); text-decoration: none; transition: color 0.3s, transform 0.3s; }
+        .social-links a:hover { color: var(--primary-color); transform: scale(1.1); }
+        .social-links svg, .social-links i { 
+            height: 28px; 
+            width: 28px;
+            font-size: 28px; /* For Font Awesome */
+            line-height: 28px; /* Vertical alignment for Font Awesome */
+        }
+
+        /* --- Card & Grid --- */
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 2rem;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative; overflow: hidden; height: 100%;
+        }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+
+        /* --- Projects Section --- */
+        .project-filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .filter-btn {
+            background: transparent; border: 1px solid var(--border-color); color: var(--text-color);
+            padding: 0.5rem 1.5rem; border-radius: 20px; cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; font-weight: 500;
+        }
+        .filter-btn:hover, .filter-btn.active { background-color: var(--primary-color); color: var(--bg-color); border-color: var(--primary-color); }
+
+        .project-card { 
+            display: flex; flex-direction: column;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .project-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px var(--glow-color);
+        }
+        .project-card.hide { display: none; }
+        
+        .project-card h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
+        .project-role { color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 1rem; font-style: italic; }
+        .project-card p { font-size: 0.95rem; color: var(--text-color); margin-bottom: 1.5rem; flex-grow: 1; }
+        .project-card .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin-bottom: 1.5rem; }
+        .project-card .skills-list li { background-color: rgba(0, 242, 255, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+        .project-link { color: var(--primary-color); text-decoration: none; font-weight: 600; transition: transform 0.3s ease; margin-top: auto; }
+        .project-link:hover { transform: translateX(5px); }
+
+        /* --- Experience (Timeline) --- */
+        .timeline { position: relative; max-width: 750px; margin: 0 auto; }
+        .timeline::after {
+            content: ''; position: absolute; width: 3px; background-color: var(--border-color);
+            top: 0; bottom: 0; left: 15px;
+        }
+        .timeline-item { position: relative; margin-bottom: 2.5rem; padding-left: 50px; }
+        .timeline-dot {
+            content: ''; position: absolute; width: 15px; height: 15px;
+            border-radius: 50%; background-color: var(--primary-color);
+            border: 3px solid var(--bg-color); top: 5px; left: 8px; z-index: 1;
+        }
+        .timeline-content h3 { color: #fff; }
+        .timeline-content .company { color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-content ul { padding-left: 1.2rem; color: var(--secondary-color); }
+        .timeline-content ul li { margin-bottom: 0.5rem; }
+
+        /* --- Skills Section --- */
+        .skills-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        .skill-category { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 2rem; }
+        .skill-category h4 { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .skill-item { background-color: rgba(0, 242, 255, 0.1); color: var(--text-color); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; }
+        .skill-item:hover { color: var(--primary-color); transform: translateY(-3px); }
+
+        /* --- Contact Section --- */
+        #contact .container { max-width: 700px; text-align: center;}
+        #contact p { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 2rem; }
+        .contact-btn {
+            display: inline-block; background-color: var(--primary-color); color: var(--bg-color);
+            padding: 0.8rem 2.5rem; border-radius: 50px; text-decoration: none;
+            font-weight: 600; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .contact-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--glow-color); }
+
+        /* --- Footer & Back to Top --- */
+        .main-footer { padding: 2rem 0; text-align: center; color: var(--secondary-color); border-top: 1px solid var(--border-color); margin-top: 50px; }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Changed from right to left */
+            background: var(--primary-color);
+            color: var(--bg-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        }
+        #back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .main-nav { display: none; } /* Could be replaced with a hamburger menu */
+            #hero h1 { font-size: 2.2rem; }
+            #hero .subtitle { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .timeline::after { left: 50%; transform: translateX(-50%); }
+            .timeline-item { padding-left: 0; text-align: center; }
+            .timeline-dot { left: 50%; transform: translateX(-50%); top: -35px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="main-header" id="main-header">
+        <div class="container">
+            <a href="#" class="logo">Ranjith Saila</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <h1>Hi, I'm <span class="typing-text"></span><span class="cursor"></span></h1>
+                <p class="subtitle">A Data & Business Analyst transforming data into actionable insights.</p>
+                <div class="social-links">
+                    <a href="https://github.com/RANJITH1708" target="_blank" aria-label="GitHub">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" aria-label="LinkedIn">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>LinkedIn</title><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://www.kaggle.com/ranjithsaila" target="_blank" aria-label="Kaggle">
+                        <i class="fa-brands fa-kaggle"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="data">Data Analysis</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="db">Database</button>
+                </div>
+                <div class="grid-container">
+                    <!-- Add data-category to each project card -->
+                    <div class="card project-card" data-category="data">
+                        <h3>American Express Credit Card Default Prediction</h3>
+                        <p class="project-role">Predictive Analytics and AI Capstone</p>
+                        <p>Predicted credit card defaults focusing on migrant status. Cleaned and processed data, handling imbalances with under-sampling, and applied ML models like logistic regression, neural networks, and decision trees.</p>
+                        <ul class="skills-list">
+                            <li>SAS E-Miner</li><li>Python</li><li>Predictive Modeling</li>
+                        </ul>
+                        <a href="https://github.com/RANJITH1708/AMEX-Predicting-Credit-Card-Default-Risk" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                    </div>
+                    <div class="card project-card" data-category="web">
+                        <h3>CeasPay Web Development</h3>
+                        <p class="project-role">Full-Stack Web Application</p>
+                        <p>Developed a secure portal for a financial services provider. Built the frontend with HTML/CSS/Bootstrap and the backend with Firebase Authentication and Cloud Firestore, including a role-based access admin portal.</p>
+                        <ul class="skills-list">
+                            <li>HTML/CSS</li><li>Bootstrap</li><li>Firebase</li><li>NoSQL</li>
+                        </ul>
+                        <a href="https://github.com/RANJITH1708/CeasPay_Web_App" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                    </div>
+                    <div class="card project-card" data-category="data">
+                        <h3>Oklahoma Crime Data Analysis</h3>
+                        <p class="project-role">Data Analysis and Visualization</p>
+                        <p>Analyzed 10 years of crime data. Built data pipelines from MySQL to Python for analysis and to Power BI for visualization. Achieved a 0.96 R² with a Random Forest predictive model for spatial trend analysis.</p>
+                        <ul class="skills-list">
+                            <li>Power BI</li><li>Python</li><li>MySQL</li><li>VBA</li>
+                        </ul>
+                        <a href="https://github.com/RANJITH1708/Oklahoma_Crime_Data" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                    </div>
+                    <div class="card project-card" data-category="db">
+                        <h3>Wholesale Company DB Project</h3>
+                        <p class="project-role">SQL Database Management</p>
+                        <p>Designed and implemented a relational database to manage inventory, customers, and shipping logistics. Created SQL queries to analyze business data and built a schema with primary/foreign keys to ensure data integrity.</p>
+                        <ul class="skills-list">
+                            <li>MySQL</li><li>Database Design</li><li>SQL</li>
+                        </ul>
+                        <a href="#" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>Data Analyst</h3>
+                            <p class="company">Edwisely · Full-time | Aug 2020 - Jul 2022</p>
+                            <ul>
+                                <li>Cleaned student engagement records and created visualizations using SQL, Python, and PowerBI to help optimize platform features.</li>
+                                <li>Analyzed user behavior for 15,000+ learners, contributing to a project that improved student retention by 12%.</li>
+                                <li>Automated reporting processes with Python, saving 8 hours monthly, and developed a KPI monitoring dashboard.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>Insurance Agent</h3>
+                            <p class="company">Shriram Life Insurance · Internship | May 2020 - Jul 2020</p>
+                            <ul>
+                                <li>Drove sales of insurance products by securing 9 new policies within a three-month period.</li>
+                                <li>Conducted thorough needs assessments for over 30 clients to craft customized financial solutions.</li>
+                                <li>Mastered customer relationship management techniques to maintain strong client connections.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>Project Manager</h3>
+                            <p class="company">Green Gang Arts · Part-time | Mar 2018 - Jan 2020</p>
+                            <ul>
+                                <li>Managed relationships with over 50 clients, ensuring satisfaction with custom art projects.</li>
+                                <li>Coordinated projects, setting timelines and teaming up with artists to deliver art on schedule.</li>
+                                <li>Handled quotes, budgets, and schedules in Microsoft Excel to keep projects on track.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>Accounting Intern</h3>
+                            <p class="company">John's Business School · Internship | Mar 2019 - Jul 2019</p>
+                            <ul>
+                                <li>Executed precise processing of monthly journal entries, ensuring 100% compliance.</li>
+                                <li>Reconciled accounts receivable and payable entries, resolving discrepancies efficiently.</li>
+                                <li>Contributed to a collaborative team by providing dependable data support for financial tracking.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                         <h4>Data & Analytics</h4>
+                         <div class="skills-grid">
+                            <div class="skill-item">Python</div><div class="skill-item">SQL / MySQL</div><div class="skill-item">Power BI</div><div class="skill-item">SAS E-Miner</div><div class="skill-item">Tableau</div><div class="skill-item">Predictive Analytics</div><div class="skill-item">Machine Learning</div>
+                         </div>
+                    </div>
+                    <div class="skill-category">
+                         <h4>Web & Development</h4>
+                         <div class="skills-grid">
+                            <div class="skill-item">HTML</div><div class="skill-item">CSS</div><div class="skill-item">Bootstrap</div><div class="skill-item">Firebase</div><div class="skill-item">NoSQL</div><div class="skill-item">VBA</div>
+                         </div>
+                    </div>
+                    <div class="skill-category">
+                         <h4>Business & Other Tools</h4>
+                         <div class="skills-grid">
+                            <div class="skill-item">Business Analytics</div><div class="skill-item">Digital Marketing</div><div class="skill-item">Project Management</div><div class="skill-item">Microsoft Excel</div><div class="skill-item">Git & GitHub</div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="grid-container">
+                    <div class="card education-card">
+                        <h3>Master's degree, Business Analytics</h3>
+                        <p>University of Central Oklahoma</p>
+                        <span class="duration">Aug 2022 - Dec 2024</span>
+                    </div>
+                    <div class="card education-card">
+                        <h3>Bachelor of Business Administration, Business analytics</h3>
+                        <p>IBS Hyderabad</p>
+                        <span class="duration">2017 - 2020</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <p>I'm currently seeking new opportunities and would love to hear from you. Whether you have a question or just want to connect, feel free to reach out!</p>
+                <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" class="contact-btn">Connect on LinkedIn</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Ranjith. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" id="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- 1. SCROLL-BASED ANIMATIONS & HEADER ---
+        const header = document.getElementById('main-header');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        window.addEventListener('scroll', () => {
+            // Header shrink
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Back to top button visibility
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // --- 2. TYPING EFFECT ---
+        const typingText = document.querySelector('.typing-text');
+        const words = ["Ranjith Saila.", "a Data Analyst.", "a Problem Solver."];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            const currentChar = isDeleting ? currentWord.substring(0, charIndex - 1) : currentWord.substring(0, charIndex + 1);
+            
+            typingText.textContent = currentChar;
+
+            if (!isDeleting && charIndex < currentWord.length) {
+                charIndex++;
+                setTimeout(type, 120);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(type, 80);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+                setTimeout(type, 1200);
+            }
+        }
+        type();
+        
+        // --- 3. PROJECT CARD 3D TILT EFFECT ---
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const { width, height } = rect;
+                
+                const rotateX = (y / height - 0.5) * -20; // Max rotation 10deg
+                const rotateY = (x / width - 0.5) * 20;  // Max rotation 10deg
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+        
+        // --- 4. PROJECT FILTERING ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const allProjectCards = document.querySelectorAll('.project-card[data-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Show/hide cards
+                allProjectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+    });
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/68567ca9b39372190b4c46ab/1iu8tdtvr';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    
+</body>
+</html>
