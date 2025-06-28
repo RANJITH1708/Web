@@ -43,15 +43,6 @@
             overflow: hidden;
         }
 
-        .video-background-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
         #video-background {
             position: absolute;
             top: 50%;
@@ -62,7 +53,7 @@
             height: auto;
             transform: translateX(-50%) translateY(-50%);
             z-index: -1;
-            pointer-events: none;
+            object-fit: cover; /* Ensures the video covers the area */
         }
 
         .video-overlay {
@@ -242,15 +233,11 @@
 
     <!-- Hero Section with Video Background -->
     <section id="hero-video">
-        <div class="video-background-wrapper">
-            <!-- YouTube video ID for "Zenitsu Thunderclap and Flash" -->
-            <iframe id="video-background" 
-                    src="https://www.youtube.com/embed/7OW8T9j_eT4?autoplay=1&mute=1&loop=1&playlist=7OW8T9j_eT4&controls=0&showinfo=0&autohide=1&modestbranding=1" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media" 
-                    allowfullscreen>
-            </iframe>
-        </div>
+        <video id="video-background" autoplay loop muted playsinline>
+            <!-- This now points to your uploaded video file -->
+            <source src="Thunderclap.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="video-overlay"></div>
         <div class="hero-content">
             <h1>Beyond the <span>Data</span></h1>
