@@ -5,35 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO: Primary Meta Tags -->
     <title>Ranjith Saila | Data & Business Analyst Portfolio</title>
     <meta name="description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI. Discover key projects and skills.">
     <meta name="keywords" content="Ranjith Saila, Data Analyst, Business Analyst, Portfolio, Python, SQL, Power BI, SAS, Machine Learning, Data Visualization, Business Analytics, Oklahoma">
     <link rel="canonical" href="https://ranjith1708.github.io/Web/" />
 
-    <!-- SEO: Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ranjith1708.github.io/Web/">
     <meta property="og:title" content="Ranjith Saila | Data & Business Analyst Portfolio">
     <meta property="og:description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI.">
-    <!-- Replace this with a link to an image (e.g., a screenshot of your site or a headshot). 1200x630 pixels is recommended. -->
     <meta property="og:image" content="https://placehold.co/1200x630/0a0a1a/00f2ff?text=Ranjith+Saila\nData+Analyst">
 
-    <!-- SEO: Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ranjith1708.github.io/Web/">
     <meta property="twitter:title" content="Ranjith Saila | Data & Business Analyst Portfolio">
     <meta property="twitter:description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI.">
-    <!-- Use the same image URL as og:image -->
     <meta property="twitter:image" content="https://placehold.co/1200x630/0a0a1a/00f2ff?text=Ranjith+Saila\nData+Analyst">
 
-    <!-- Fonts & Stylesheets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- SEO: JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -241,7 +234,7 @@
 
         /* --- Glowing Star --- */
         #glowing-star {
-            position: fixed;
+            position: fixed; /* This is the key property */
             z-index: 999;
             color: #FFD700; /* Gold color */
             font-size: 20px;
@@ -276,6 +269,9 @@
 </head>
 
 <body>
+    <!-- Star moved to be the first element in the body -->
+    <a href="./hobbies.html" id="glowing-star" aria-label="Discover my hobbies">★</a>
+    
     <!-- Header -->
     <header class="main-header" id="main-header">
         <div class="container">
@@ -477,8 +473,8 @@
 
     </main>
     
-    <!-- Glowing Star Link -->
-    <a href="./hobbies.html" id="glowing-star" aria-label="Discover my hobbies">★</a>
+    <!-- Back to Top Button -->
+    <a href="#hero" id="back-to-top" aria-label="Back to top">↑</a>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -487,8 +483,6 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#hero" id="back-to-top" aria-label="Back to top">↑</a>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -605,19 +599,27 @@
         // --- 5. RANDOM GLOWING STAR POSITION ---
         const star = document.getElementById('glowing-star');
         if (star) {
-            // Set a random position within the viewport, with some padding
-            const padding = 50; // pixels from the edge
-            const randomTop = padding + Math.random() * (window.innerHeight - padding * 2);
-            const randomLeft = padding + Math.random() * (window.innerWidth - padding * 2);
-
+            // Set a random vertical position
+            const verticalPadding = 100; // px from top/bottom
+            const randomTop = verticalPadding + Math.random() * (window.innerHeight - verticalPadding * 2);
             star.style.top = `${randomTop}px`;
-            star.style.left = `${randomLeft}px`;
+
+            // Randomly choose left or right side and position it
+            const horizontalPadding = 40; // max distance from side edge
+            if (Math.random() < 0.5) {
+                // Place on the left side
+                star.style.left = `${Math.random() * horizontalPadding}px`;
+                star.style.right = 'auto';
+            } else {
+                // Place on the right side
+                star.style.right = `${Math.random() * horizontalPadding}px`;
+                star.style.left = 'auto';
+            }
         }
 
     });
     </script>
 
-    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -629,7 +631,5 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <!--End of Tawk.to Script-->
-    
-</body>
+    </body>
 </html>
