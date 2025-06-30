@@ -16,7 +16,6 @@
     <meta property="og:url" content="https://ranjith1708.github.io/Web/">
     <meta property="og:title" content="Ranjith Saila | Data & Business Analyst Portfolio">
     <meta property="og:description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI.">
-    <!-- Replace this with a link to an image (e.g., a screenshot of your site or a headshot). 1200x630 pixels is recommended. -->
     <meta property="og:image" content="https://placehold.co/1200x630/0a0a1a/00f2ff?text=Ranjith+Saila\nData+Analyst">
 
     <!-- SEO: Twitter -->
@@ -24,7 +23,6 @@
     <meta property="twitter:url" content="https://ranjith1708.github.io/Web/">
     <meta property="twitter:title" content="Ranjith Saila | Data & Business Analyst Portfolio">
     <meta property="twitter:description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI.">
-    <!-- Use the same image URL as og:image -->
     <meta property="twitter:image" content="https://placehold.co/1200x630/0a0a1a/00f2ff?text=Ranjith+Saila\nData+Analyst">
 
     <!-- Fonts & Stylesheets -->
@@ -103,9 +101,54 @@
         }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; height: 70px; transition: height 0.3s ease; }
         .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
+        .main-nav { display: none; } /* Hide on mobile by default */
         .main-nav ul { display: flex; list-style-type: none; }
         .main-nav a { color: var(--text-color); text-decoration: none; padding: 0.5rem 1rem; transition: color 0.3s, text-shadow 0.3s; font-weight: 500;}
         .main-nav a:hover, .main-nav a.active { color: var(--primary-color); text-shadow: 0 0 10px var(--glow-color); }
+        
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+        
+        /* Mobile Nav */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(10, 10, 26, 0.98);
+            backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: left 0.5s ease-in-out;
+            z-index: 1000;
+        }
+        .mobile-nav.active {
+            left: 0;
+        }
+        .mobile-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+            transition: color 0.3s;
+        }
+        .mobile-nav a:hover {
+            color: var(--primary-color);
+        }
 
         /* --- General Section Styling --- */
         section { padding: 120px 0; }
@@ -275,14 +318,22 @@
         }
 
         /* --- Responsive --- */
+        @media (min-width: 769px) {
+            .main-nav { display: block; }
+        }
+        
         @media (max-width: 768px) {
-            .main-nav { display: none; } /* Could be replaced with a hamburger menu */
+            .hamburger { display: block; }
+            .container { padding: 0 1.5rem; }
             #hero h1 { font-size: 2.2rem; }
             #hero .subtitle { font-size: 1rem; }
             .section-title { font-size: 2rem; }
-            .timeline::after { left: 50%; transform: translateX(-50%); }
-            .timeline-item { padding-left: 0; text-align: center; }
-            .timeline-dot { left: 50%; transform: translateX(-50%); top: -35px; }
+            .timeline::after { left: 15px; }
+            .timeline-item { padding-left: 40px; }
+            .timeline-dot { left: 8px; }
+            .journey-content { font-size: 1rem; }
+            .project-filters { gap: 0.5rem; }
+            .filter-btn { padding: 0.4rem 1rem; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -304,8 +355,22 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
 
     <main>
         <!-- Hero Section -->
@@ -526,6 +591,8 @@
         const header = document.getElementById('main-header');
         const backToTopBtn = document.getElementById('back-to-top');
         const faders = document.querySelectorAll('.fade-in');
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
 
         const appearOptions = {
             threshold: 0.2,
@@ -557,6 +624,18 @@
             } else {
                 backToTopBtn.classList.remove('visible');
             }
+        });
+
+        // Hamburger Menu Toggle
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+        
+        // Close mobile nav when a link is clicked
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
         });
 
         // --- 2. TYPING EFFECT ---
