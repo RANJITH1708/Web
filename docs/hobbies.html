@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranjith Saila | Hobbies & Interests</title>
-    <meta name="description" content="A personal look into the hobbies and interests of Ranjith Saila, including anime, gaming, and creative pursuits.">
+    <meta name="description" content="A personal look into the hobbies and interests of Ranjith Saila, including favorite movies, anime, books, games, and activities.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
             height: auto;
             transform: translateX(-50%) translateY(-50%);
             z-index: -1;
-            object-fit: cover; /* Ensures the video covers the area */
+            object-fit: cover;
         }
 
         .video-overlay {
@@ -62,7 +62,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 26, 0.7); /* Dark overlay */
+            background: rgba(10, 10, 26, 0.7);
             z-index: 0;
         }
         
@@ -140,43 +140,108 @@
             border-radius: 2px;
         }
         
-        /* --- Hobbies Grid --- */
-        .hobbies-grid {
+        /* --- Interests Grid --- */
+        .interests-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
         }
+        
+        @media (min-width: 992px) {
+            .interests-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-        .hobby-card {
+        .interest-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 2rem;
-            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
-        .hobby-card:hover {
+        .interest-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 20px var(--glow-color);
         }
+
+        .interest-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
         
-        .hobby-card i {
-            font-size: 3rem;
+        .interest-header i {
+            font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            width: 50px;
+            text-align: center;
         }
 
-        .hobby-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        .interest-header h3 {
+            font-size: 1.75rem;
             color: #fff;
         }
-
-        .hobby-card p {
-            color: var(--secondary-color);
-            font-size: 0.95rem;
+        
+        .interest-card .description {
+            font-size: 1.05rem;
+            color: var(--text-color);
+            flex-grow: 1;
         }
+        
+        .interest-card .description p {
+            margin-bottom: 1rem;
+        }
+        
+        .interest-card .description a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: text-shadow 0.3s;
+        }
+        
+        .interest-card .description a:hover {
+            text-shadow: 0 0 8px var(--glow-color);
+        }
+        
+        .recommendation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .recommendation-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .recommendation-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        @media(min-width: 576px) {
+            .recommendation-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .recommendation-column:first-child {
+                border-right: 1px solid var(--border-color);
+                padding-right: 2rem;
+            }
+        }
+        
+        .recommendation-column h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+
 
         /* --- Quote Section --- */
         .quote-section {
@@ -235,7 +300,6 @@
     <!-- Hero Section with Video Background -->
     <section id="hero-video">
         <video id="video-background" autoplay loop muted playsinline>
-            <!-- This now points to your uploaded video file -->
             <source src="Thunderclap.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -252,38 +316,87 @@
     <!-- Main Content Area -->
     <main id="main-content">
         <section class="content-section">
-            <h2 class="section-title">Hobbies & Interests</h2>
-            <div class="hobbies-grid">
-                <div class="hobby-card">
-                    <i class="fas fa-film"></i>
-                    <h3>Movies & Anime</h3>
-                    <p>I enjoy epic sci-fi like Dune, Avatar, and Star Trek, and the incredible storytelling of anime like Naruto Shippuden and Demon Slayer.</p>
+            <h2 class="section-title">My Interests</h2>
+            <div class="interests-grid">
+                
+                <div class="interest-card">
+                    <div class="interest-header">
+                        <i class="fas fa-film"></i>
+                        <h3>Movies & Anime</h3>
+                    </div>
+                    <div class="description">
+                        <p>I like to watch sci-fi and historical epics. I'm also a big fan of anime.</p>
+                        <div class="recommendation-container">
+                            <div class="recommendation-column">
+                                <h4>My Favorite Movies:</h4>
+                                <ul class="recommendation-list">
+                                    <li><a href="https://www.imdb.com/title/tt1160419/" target="_blank">Dune</a></li>
+                                    <li><a href="https://www.imdb.com/title/tt0499549/" target="_blank">Avatar</a></li>
+                                    <li><a href="https://www.imdb.com/title/tt0816692/" target="_blank">Interstellar</a></li>
+                                    <li><a href="https://www.imdb.com/title/tt0796366/" target="_blank">Star Trek</a></li>
+                                    <li><a href="https://www.imdb.com/title/tt0172495/" target="_blank">Gladiator</a></li>
+                                    <li><a href="https://www.imdb.com/title/tt0332452/" target="_blank">Troy</a></li>
+                                </ul>
+                            </div>
+                            <div class="recommendation-column">
+                                <h4>My Favorite Anime:</h4>
+                                <ul class="recommendation-list">
+                                    <li><a href="https://www.imdb.com/title/tt0988824/" target="_blank">Naruto Shippuden</a></li>
+                                    <li><a href="https://www.imdb.com/title/tt9335498/" target="_blank">Demon Slayer</a></li>
+                                    <li><a href="https://www.imdb.com/title/tt0347149/" target="_blank">Howl's Moving Castle</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="hobby-card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Gaming</h3>
-                    <p>My favorite games are immersive worlds like Red Dead Redemption 2, competitive shooters like PUBG, and strategy games like Polytopia.</p>
+
+                <div class="interest-card">
+                    <div class="interest-header">
+                        <i class="fas fa-book-open-reader"></i>
+                        <h3>Reading & Philosophy</h3>
+                    </div>
+                    <div class="description">
+                        <p>I like to read books because I feel I am getting to understand life, gaining different perspectives or ideas, and realizing how little I know about life and how things work.</p>
+                        <p>These are a few of my favorite books that I would 100% recommend:</p>
+                         <ul class="recommendation-list">
+                            <li><a href="https://www.google.com/books/edition/The_Autobiography_of_Benjamin_Franklin/Y32wOLkDz1oC?hl=en&gbpv=0" target="_blank">The Autobiography of Benjamin Franklin</a></li>
+                            <li><a href="https://www.google.com/books/edition/Meditations/VVsmU-4YwFsC?hl=en&gbpv=0" target="_blank">Meditations by Marcus Aurelius</a></li>
+                            <li><a href="https://www.google.com/books/edition/Deep_Work/lZpFCgAAQBAJ?hl=en" target="_blank">Deep Work by Cal Newport</a></li>
+                            <li><a href="https://www.google.com/books/edition/Walden/0p0DzgEACAAJ?hl=en" target="_blank">Walden by Henry David Thoreau</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="hobby-card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Reading</h3>
-                    <p>I'm drawn to books on self-improvement and philosophy, including The Autobiography of Benjamin Franklin, Atomic Habits, and Deep Work.</p>
+
+                <div class="interest-card">
+                    <div class="interest-header">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Gaming</h3>
+                    </div>
+                     <div class="description">
+                        <p>I enjoy playing video games to unwind. My go-to favorites are<a href="https://store.steampowered.com/agecheck/app/1174180/" target="_blank">Red Dead Redemption 2</a>, <a href="https://pubg.com/en/main" target="_blank">PUBG</a>, and <a href="https://polytopia.io/" target="_blank">The Battle of Polytopia</a>.</p>
+                    </div>
                 </div>
-                 <div class="hobby-card">
-                    <i class="fas fa-person-hiking"></i>
-                    <h3>Fitness & Outdoors</h3>
-                    <p>To stay active and clear my head, I enjoy hiking on local trails and hitting the gym whenever I get the chance.</p>
+
+                <div class="interest-card">
+                    <div class="interest-header">
+                        <i class="fas fa-person-hiking"></i>
+                        <h3>Activities</h3>
+                    </div>
+                    <div class="description">
+                        <p>When I'm not at my computer, I try to get outdoors. I like hiking on local trails and just hitting the gym to stay active.</p>
+                    </div>
                 </div>
+
             </div>
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">Favorite Quote</h2>
+            <h2 class="section-title">Guiding Philosophy</h2>
             <div class="quote-section">
                 <blockquote>
-                    "To learn one must be humble."
+                    "Be humble enough to learn from everything."
                 </blockquote>
-                <cite>– James Joyce</cite>
+                <cite>– A guiding principle</cite>
             </div>
         </section>
     </main>
@@ -294,3 +407,4 @@
 
 </body>
 </html>
+
