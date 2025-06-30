@@ -251,27 +251,27 @@
         }
         #back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 
-        /* --- Glowing Star --- */
-        #glowing-star {
+        /* --- Glowing Thunderbolt --- */
+        #glowing-thunder {
             position: fixed; /* This is the key property */
             z-index: 999;
             color: #FFD700; /* Gold color */
-            font-size: 20px;
+            font-size: 24px;
             text-decoration: none;
-            text-shadow: 0 0 5px #FFD700, 0 0 15px #FFD700, 0 0 25px #FFD700;
-            animation: pulse 2.5s infinite ease-in-out;
+            text-shadow: 0 0 8px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+            animation: pulse 2s infinite ease-in-out;
             transition: transform 0.3s ease;
         }
 
-        #glowing-star:hover {
+        #glowing-thunder:hover {
             transform: scale(1.5);
-            text-shadow: 0 0 10px #fff, 0 0 20px #FFD700, 0 0 30px #FFD700;
+            text-shadow: 0 0 10px #fff, 0 0 25px #FFD700, 0 0 40px #FFD700;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.7; }
+            0% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 0.8; }
         }
 
         /* --- Responsive --- */
@@ -288,8 +288,8 @@
 </head>
 
 <body>
-    <!-- Star moved to be the first element in the body -->
-    <a href="./hobbies.html" id="glowing-star" aria-label="Discover my hobbies">★</a>
+    <!-- Thunderbolt moved to be the first element in the body -->
+    <a href="./hobbies.html" id="glowing-thunder" aria-label="Discover my hobbies"><i class="fa-solid fa-bolt"></i></a>
     
     <!-- Header -->
     <header class="main-header" id="main-header">
@@ -631,24 +631,24 @@
             });
         });
 
-        // --- 5. RANDOM GLOWING STAR POSITION ---
-        const star = document.getElementById('glowing-star');
-        if (star) {
+        // --- 5. RANDOM GLOWING THUNDERBOLT POSITION ---
+        const thunder = document.getElementById('glowing-thunder');
+        if (thunder) {
             // Set a random vertical position
             const verticalPadding = 100; // px from top/bottom
             const randomTop = verticalPadding + Math.random() * (window.innerHeight - verticalPadding * 2);
-            star.style.top = `${randomTop}px`;
+            thunder.style.top = `${randomTop}px`;
 
             // Randomly choose left or right side and position it
             const horizontalPadding = 40; // max distance from side edge
             if (Math.random() < 0.5) {
                 // Place on the left side
-                star.style.left = `${Math.random() * horizontalPadding}px`;
-                star.style.right = 'auto';
+                thunder.style.left = `${Math.random() * horizontalPadding}px`;
+                thunder.style.right = 'auto';
             } else {
                 // Place on the right side
-                star.style.right = `${Math.random() * horizontalPadding}px`;
-                star.style.left = 'auto';
+                thunder.style.right = `${Math.random() * horizontalPadding}px`;
+                thunder.style.left = 'auto';
             }
         }
 
