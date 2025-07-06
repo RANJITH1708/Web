@@ -83,8 +83,6 @@
             color: var(--text-color);
             line-height: 1.7;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 15% 50%, rgba(0, 242, 255, 0.08), transparent 35%),
-                              radial-gradient(circle at 85% 30%, rgba(137, 152, 185, 0.08), transparent 35%);
         }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
@@ -166,10 +164,36 @@
 
         /* --- Hero Section --- */
         #hero {
-            height: 100vh; display: flex; align-items: center; text-align: center;
-            padding-top: 70px; /* Offset for header */
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            text-align: center;
+            padding-top: 70px;
+            position: relative;
+            overflow: hidden;
         }
-        #hero .container { max-width: 800px; }
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -2;
+            object-fit: cover;
+        }
+        #hero .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 26, 0.6);
+            z-index: -1;
+        }
+        #hero .container { max-width: 800px; position: relative; z-index: 1;}
         #hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
         #hero h1 span.typing-text { color: var(--primary-color); }
         #hero h1 .cursor { display: inline-block; background-color: var(--primary-color); width: 4px; margin-left: 8px; animation: blink 1s infinite; }
@@ -375,6 +399,12 @@
     <main>
         <!-- Hero Section -->
         <section id="hero">
+            <video id="hero-video" autoplay loop muted playsinline>
+                <!-- IMPORTANT: Change 'background-video.mp4' to your actual video filename -->
+                <source src="background-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
             <div class="container">
                 <h1>Hi, I'm <span class="typing-text"></span><span class="cursor"></span></h1>
                 <p class="subtitle">My drive as a data analyst stems from a constant desire to learn and apply new skills, particularly in the ever-evolving fields of data and machine learning.</p>
@@ -468,11 +498,11 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content card">
                             <h3>Data Analyst</h3>
-                            <p class="company">HazonTechnologies · Full-time | Aug 2020 - Jul 2022</p>
+                            <p class="company">Edwisely · Full-time | Aug 2020 - Jul 2022</p>
                             <ul>
-                                <li>Leveraged advanced statistical modeling and predictive analytics (Regression models) to interpret complex Higher Educational Institution (HEI) datasets, developing data-driven models for forecasting institutional performance and informing accreditation/ranking strategies.</li>
-                                <li>Managed the end-to-end data lifecycle, including extracting data from various sources (databases, flat files, web), transforming it to meet requirements, loading it into target systems, and validating data for quality assurance.</li>
-                                <li>Created and presented interactive data visualizations and dashboards from assessment reports, helping stakeholders make better decisions for academic quality.</li>
+                                <li>Cleaned student engagement records and created visualizations using SQL, Python, and PowerBI to help optimize platform features.</li>
+                                <li>Analyzed user behavior for 15,000+ learners, contributing to a project that improved student retention by 12%.</li>
+                                <li>Automated reporting processes with Python, saving 8 hours monthly, and developed a KPI monitoring dashboard.</li>
                             </ul>
                         </div>
                     </div>
@@ -528,7 +558,7 @@
                          </div>
                     </div>
                     <div class="skill-category">
-                         <h4>Web & Development (Basic)</h4>
+                         <h4>Web & Development</h4>
                          <div class="skills-grid">
                             <div class="skill-item">HTML</div><div class="skill-item">CSS</div><div class="skill-item">Bootstrap</div><div class="skill-item">Firebase</div><div class="skill-item">NoSQL</div><div class="skill-item">VBA</div>
                          </div>
