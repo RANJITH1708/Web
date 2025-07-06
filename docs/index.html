@@ -88,18 +88,18 @@
 
         /* --- Header --- */
         .main-header {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1001;
             background: rgba(10, 10, 26, 0.8);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            transition: background-color 0.3s ease, height 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         .main-header.scrolled {
              background: rgba(10, 10, 26, 0.95);
         }
-        .main-header .container { display: flex; justify-content: space-between; align-items: center; height: 70px; transition: height 0.3s ease; }
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
         .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
-        .main-nav { display: none; } /* Hide on mobile by default */
+        .main-nav { display: none; }
         .main-nav ul { display: flex; list-style-type: none; }
         .main-nav a { color: var(--text-color); text-decoration: none; padding: 0.5rem 1rem; transition: color 0.3s, text-shadow 0.3s; font-weight: 500;}
         .main-nav a:hover, .main-nav a.active { color: var(--primary-color); text-shadow: 0 0 10px var(--glow-color); }
@@ -108,7 +108,7 @@
         .hamburger {
             display: none;
             cursor: pointer;
-            z-index: 1001;
+            z-index: 1002;
         }
         .hamburger div {
             width: 25px;
@@ -132,7 +132,7 @@
             justify-content: center;
             align-items: center;
             transition: left 0.5s ease-in-out;
-            z-index: 1000;
+            z-index: 1001;
         }
         .mobile-nav.active {
             left: 0;
@@ -401,7 +401,7 @@
         <section id="hero">
             <video id="hero-video" autoplay loop muted playsinline>
                 <!-- IMPORTANT: Change 'background-video.mp4' to your actual video filename -->
-                <source src="background-video2.mp4" type="video/mp4">
+                <source src="background-video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="video-overlay"></div>
@@ -498,11 +498,11 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content card">
                             <h3>Data Analyst</h3>
-                            <p class="company">Edwisely · Full-time | Aug 2020 - Jul 2022</p>
+                            <p class="company">HazonTechnologies · Full-time | Aug 2020 - Jul 2022</p>
                             <ul>
-                                <li>Cleaned student engagement records and created visualizations using SQL, Python, and PowerBI to help optimize platform features.</li>
-                                <li>Analyzed user behavior for 15,000+ learners, contributing to a project that improved student retention by 12%.</li>
-                                <li>Automated reporting processes with Python, saving 8 hours monthly, and developed a KPI monitoring dashboard.</li>
+                                <li>Leveraged advanced statistical modeling and predictive analytics (Regression models) to interpret complex Higher Educational Institution (HEI) datasets, developing data-driven models for forecasting institutional performance and informing accreditation/ranking strategies.</li>
+                                <li>Managed the end-to-end data lifecycle, including extracting data from various sources (databases, flat files, web), transforming it to meet requirements, loading it into target systems, and validating data for quality assurance.</li>
+                                <li>Created and presented interactive data visualizations and dashboards from assessment reports, helping stakeholders make better decisions for academic quality.</li>
                             </ul>
                         </div>
                     </div>
