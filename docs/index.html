@@ -232,14 +232,6 @@
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
         /* --- Projects Section --- */
-        .project-filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
-        .filter-btn {
-            background: transparent; border: 1px solid var(--border-color); color: var(--text-color);
-            padding: 0.5rem 1.5rem; border-radius: 20px; cursor: pointer;
-            transition: background-color 0.3s, color 0.3s; font-weight: 500;
-        }
-        .filter-btn:hover, .filter-btn.active { background-color: var(--primary-color); color: var(--bg-color); border-color: var(--primary-color); }
-
         .project-card { 
             display: flex; flex-direction: column;
             transform-style: preserve-3d;
@@ -257,6 +249,7 @@
         .project-card .skills-list li { background-color: rgba(0, 242, 255, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
         .project-link { color: var(--primary-color); text-decoration: none; font-weight: 600; transition: transform 0.3s ease; margin-top: auto; }
         .project-link:hover { transform: translateX(5px); }
+        .project-links { margin-top: auto; display: flex; gap: 1rem; flex-wrap: wrap;}
 
         /* --- Experience (Timeline) --- */
         .timeline { position: relative; max-width: 750px; margin: 0 auto; }
@@ -272,6 +265,8 @@
         }
         .timeline-content h3 { color: #fff; }
         .timeline-content .company { color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-content .company a { color: var(--primary-color); text-decoration: none; }
+        .timeline-content .company a:hover { text-decoration: underline; }
         .timeline-content ul { padding-left: 1.2rem; color: var(--secondary-color); }
         .timeline-content ul li { margin-bottom: 0.5rem; }
 
@@ -369,10 +364,9 @@
     <!-- Header -->
     <header class="main-header" id="main-header">
         <div class="container">
-            <a href="#" class="logo">Ranjith Saila</a>
+            <a href="#" class="logo">Ranjith Kumar Saila</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -389,7 +383,6 @@
     
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
-        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
@@ -400,7 +393,6 @@
         <!-- Hero Section -->
         <section id="hero">
             <video id="hero-video" autoplay loop muted playsinline>
-                <!-- IMPORTANT: Change 'background-video.mp4' to your actual video filename -->
                 <source src="background-video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -422,68 +414,34 @@
             </div>
         </section>
 
-        <!-- About / My Journey Section -->
-        <section id="about" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">My Journey</h2>
-                <div class="journey-content">
-                    <p>My journey into the world of data analysis truly began during my undergraduate studies. While pursuing my BBA, I was introduced to a captivating course: business analytics. This was where I first understood the power of leveraging data and technology to make informed decisions, igniting my passion for the field.</p>
-                    <p>Eager to apply this foundational knowledge, I secured an entry-level data analyst trainee position. This was a pivotal experience, as it quickly evolved into a full-time role. During this hands-on period, I witnessed the incredible depth and practical application of data analysis firsthand. I saw how advanced techniques like machine learning and neural networks were being used to predict complex outcomes, solidifying my determination to master these methodologies.</p>
-                    <p>To deepen my expertise and formalize my skills, I pursued an MSBA degree at UCO. This program provided an immersive and much deeper understanding of critical areas such as DBMS (Database Management Systems) and the practical application of machine learning using both SAS and Python. A highlight of my academic experience was the capstone project, where, under the invaluable guidance of Professor Ho-Chang Chae, my group—affectionately known as the "Saints"—tackled a challenging real-world problem: predicting credit card defaults for Amex, with a specific focus on the influence of immigration status. This project not only sharpened my analytical skills but also underscored the importance of data-driven insights in financial risk assessment.</p>
-                    <p>Beyond my academic curriculum, my passion for data exploration continued. I undertook a personal project analyzing Oklahoma crime rates, meticulously collecting and interpreting ten years of data from the FBI database to identify patterns and trends, showcasing my ability to work with large, complex datasets.</p>
-                    <p>Further demonstrating my practical application of data management, I had the unique opportunity to assist Ceaspay, a FinTech company, which, prior to my involvement, lacked any form of organized data storage or analytical capabilities. I took on the challenge of building their digital presence and data management system from the ground up. This involved creating a comprehensive website and developing its robust backend capabilities using Google Firebase. This crucial project enabled Ceaspay to securely store vital customer data, track agent performance, monitor customer statuses, and empowered customers to create their own access and engage with services directly through the new portal.</p>
-                    <p>Through this comprehensive journey—from foundational education and practical industry experience to advanced academic projects and full-stack data infrastructure development—I have cultivated a robust skill set in data collection, cleaning, analysis, modeling, and visualization. I am now equipped and eager to contribute as a Data Analyst, transforming raw data into actionable insights that drive strategic decisions and solve complex business challenges.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
+        <!-- Academic Projects Section -->
         <section id="projects" class="fade-in">
             <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="data">Data Analysis</button>
-                    <button class="filter-btn" data-filter="web">Web Development</button>
-                    <button class="filter-btn" data-filter="db">Database</button>
-                </div>
+                <h2 class="section-title">Academic Projects</h2>
                 <div class="grid-container">
-                    <!-- Add data-category to each project card -->
-                    <div class="card project-card" data-category="data">
-                        <h3>American Express Credit Card Default Prediction</h3>
-                        <p class="project-role">Predictive Analytics and AI Capstone</p>
-                        <p>Predicted credit card defaults focusing on migrant status. Cleaned and processed data, handling imbalances with under-sampling, and applied ML models like logistic regression, neural networks, and decision trees.</p>
-                        <ul class="skills-list">
-                            <li>SAS E-Miner</li><li>Python</li><li>Predictive Modeling</li>
-                        </ul>
-                        <a href="https://github.com/RANJITH1708/AMEX-Predicting-Credit-Card-Default-Risk" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                    <div class="card project-card">
+                        <h3>Predicting Optimal Fertilizers</h3>
+                        <p class="project-role">Python, XGBoost, LightGBM, Optuna</p>
+                        <p>Developed a weighted ensemble of tuned XGBoost/LightGBM models, achieving a final leaderboard score of 0.35408. Optimized models by automating hyperparameter search over 100+ trials with Optuna and GPU acceleration.</p>
+                        <div class="project-links">
+                           <a href="https://github.com/RANJITH1708/Kaggle-Fertilizer-Project" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                        </div>
                     </div>
-                    <div class="card project-card" data-category="web">
-                        <h3>CeasPay Web Development</h3>
-                        <p class="project-role">Full-Stack Web Application</p>
-                        <p>Developed a secure portal for a financial services provider. Built the frontend with HTML/CSS/Bootstrap and the backend with Firebase Authentication and Cloud Firestore, including a role-based access admin portal.</p>
-                        <ul class="skills-list">
-                            <li>HTML/CSS</li><li>Bootstrap</li><li>Firebase</li><li>NoSQL</li>
-                        </ul>
-                        <a href="https://github.com/RANJITH1708/CeasPay_Web_App" class="project-link" target="_blank">View on GitHub &rarr;</a>
-                    </div>
-                    <div class="card project-card" data-category="data">
+                    <div class="card project-card">
                         <h3>Oklahoma Crime Data Analysis</h3>
-                        <p class="project-role">Data Analysis and Visualization</p>
-                        <p>Analyzed 10 years of crime data. Built data pipelines from MySQL to Python for analysis and to Power BI for visualization. Achieved a 0.96 R² with a Random Forest predictive model for spatial trend analysis.</p>
-                        <ul class="skills-list">
-                            <li>Power BI</li><li>Python</li><li>MySQL</li><li>VBA</li>
-                        </ul>
-                        <a href="https://github.com/RANJITH1708/Oklahoma_Crime_Data" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                        <p class="project-role">MySQL, Python, SQL, Random Forest, Power BI</p>
+                        <p>Designed a normalized MySQL database and analysed 50,000+ crime records to uncover trends. Developed a Random Forest model (R²=0.9597) and created Power BI dashboards to visualize a 15% crime increase.</p>
+                         <div class="project-links">
+                           <a href="https://github.com/RANJITH1708/Oklahoma_Crime_Data" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                        </div>
                     </div>
-                    <div class="card project-card" data-category="db">
-                        <h3>Wholesale Company DB Project</h3>
-                        <p class="project-role">SQL Database Management</p>
-                        <p>Designed and implemented a relational database to manage inventory, customers, and shipping logistics. Created SQL queries to analyze business data and built a schema with primary/foreign keys to ensure data integrity.</p>
-                        <ul class="skills-list">
-                            <li>MySQL</li><li>Database Design</li><li>SQL</li>
-                        </ul>
-                        <a href="#" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                    <div class="card project-card">
+                        <h3>American Express Credit Card Default Prediction (Capstone)</h3>
+                        <p class="project-role">Python, Scikit-learn, SAS Miner</p>
+                        <p>Developed credit card default prediction models for American Express using Logistic Regression, Random Forest, and Neural Networks, achieving ~92% predictive accuracy.</p>
+                         <div class="project-links">
+                           <a href="https://github.com/RANJITH1708/AMEX-Predicting-Credit-Card-Default-Risk" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -492,53 +450,61 @@
         <!-- Experience Section -->
         <section id="experience" class="fade-in">
             <div class="container">
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>Freelance Developer (Data & Backend Focus)</h3>
+                            <p class="company"><a href="https://www.ceaspay.com/" target="_blank">Ceaspay</a> | May 2025</p>
+                            <ul>
+                                <li>Developed a secure, multi-user platform on Firebase, implementing role-based access for agent and admin roles.</li>
+                                <li>Built a responsive portal for agents, improving new customer management by 40% through real-time status updates.</li>
+                                <li>Built a comprehensive admin dashboard to track agent performance, improving the compensation cycle time by 50%.</li>
+                                <li>Managed deployment on Vercel, configuring a CI/CD pipeline with GitHub Actions for continuous software updates.</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content card">
                             <h3>Data Analyst</h3>
-                            <p class="company">HazonTechnologies · Full-time | Aug 2020 - Jul 2022</p>
+                            <p class="company">HazonTechnologies | Aug 2020 - Jul 2022</p>
                             <ul>
-                                <li>Leveraged advanced statistical modeling and predictive analytics (Regression models) to interpret complex Higher Educational Institution (HEI) datasets, developing data-driven models for forecasting institutional performance and informing accreditation/ranking strategies.</li>
-                                <li>Managed the end-to-end data lifecycle, including extracting data from various sources (databases, flat files, web), transforming it to meet requirements, loading it into target systems, and validating data for quality assurance.</li>
-                                <li>Created and presented interactive data visualizations and dashboards from assessment reports, helping stakeholders make better decisions for academic quality.</li>
+                                <li>Developed statistical models in Python for the company's RISE platform to predict institutional ranking outcomes.</li>
+                                <li>Used SQL and Python to extract and aggregate data from diverse institutional sources for analysis.</li>
+                                <li>Created Power BI dashboards to visualize model outputs, helping clients identify areas for score improvement.</li>
                             </ul>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content card">
-                            <h3>Insurance Agent</h3>
+                            <h3>Project Coordinator</h3>
+                            <p class="company"><a href="https://www.greengangarts.com/" target="_blank">Green Gang Arts</a> | Mar 2018 – Jan 2020</p>
+                            <ul>
+                                <li>Successfully managed project requirements and fostered positive relationships with more than 50 clients.</li>
+                                <li>Coordinated all timelines and resources for over 50 projects, achieving a 100% on-time delivery rate.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3>Insurance Agent Trainee</h3>
                             <p class="company">Shriram Life Insurance · Internship | May 2020 - Jul 2020</p>
                             <ul>
-                                <li>Drove sales of insurance products by securing 9 new policies within a three-month period.</li>
-                                <li>Conducted thorough needs assessments for over 30 clients to craft customized financial solutions.</li>
-                                <li>Mastered customer relationship management techniques to maintain strong client connections.</li>
+                                <li>Analysed needs of 30+ clients to develop tailored insurance solutions, resulting in 9 policy sales.</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content card">
-                            <h3>Project Manager</h3>
-                            <p class="company">Green Gang Arts · Part-time | Mar 2018 - Jan 2020</p>
-                            <ul>
-                                <li>Managed relationships with over 50 clients, ensuring satisfaction with custom art projects.</li>
-                                <li>Coordinated projects, setting timelines and teaming up with artists to deliver art on schedule.</li>
-                                <li>Handled quotes, budgets, and schedules in Microsoft Excel to keep projects on track.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content card">
-                            <h3>Accounting Intern</h3>
+                            <h3>Accounting Trainee</h3>
                             <p class="company">John's Business School · Internship | Mar 2019 - Jul 2019</p>
                             <ul>
-                                <li>Executed precise processing of monthly journal entries, ensuring 100% compliance.</li>
-                                <li>Reconciled accounts receivable and payable entries, resolving discrepancies efficiently.</li>
-                                <li>Contributed to a collaborative team by providing dependable data support for financial tracking.</li>
+                                <li>Processed and reconciled financial data, ensuring 100% compliance and data accuracy.</li>
                             </ul>
                         </div>
                     </div>
@@ -552,21 +518,28 @@
                 <h2 class="section-title">Skills</h2>
                 <div class="skills-container">
                     <div class="skill-category">
-                         <h4>Data & Analytics</h4>
+                         <h4>Programming & Scripting</h4>
                          <div class="skills-grid">
-                            <div class="skill-item">Python</div><div class="skill-item">SQL / MySQL</div><div class="skill-item">Power BI</div><div class="skill-item">SAS E-Miner</div><div class="skill-item">Tableau</div><div class="skill-item">Predictive Analytics</div><div class="skill-item">Machine Learning</div>
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">R</div>
+                            <div class="skill-item">SQL</div>
+                            <div class="skill-item">VBA</div>
+                            <div class="skill-item">DAX</div>
                          </div>
                     </div>
                     <div class="skill-category">
-                         <h4>Web & Development (Basic)</h4>
+                         <h4>Databases</h4>
                          <div class="skills-grid">
-                            <div class="skill-item">HTML</div><div class="skill-item">CSS</div><div class="skill-item">Bootstrap</div><div class="skill-item">Firebase</div><div class="skill-item">NoSQL</div><div class="skill-item">VBA</div>
+                            <div class="skill-item">Microsoft SQL Server</div>
+                            <div class="skill-item">MySQL</div>
+                            <div class="skill-item">Cloud Firestore</div>
+                            <div class="skill-item">Supabase</div>
                          </div>
                     </div>
                     <div class="skill-category">
-                         <h4>Business & Other Tools</h4>
+                         <h4>Technologies</h4>
                          <div class="skills-grid">
-                            <div class="skill-item">Business Analytics</div><div class="skill-item">Digital Marketing</div><div class="skill-item">Project Management</div><div class="skill-item">Microsoft Excel</div><div class="skill-item">Git & GitHub</div>
+                            <div class="skill-item">Power BI</div><div class="skill-item">Tableau</div><div class="skill-item">MS Office Suite</div><div class="skill-item">Firebase</div><div class="skill-item">Vercel</div><div class="skill-item">Git & GitHub</div><div class="skill-item">Jupyter Notebook</div><div class="skill-item">SPSS</div><div class="skill-item">SAS Studio</div><div class="skill-item">SAS Miner</div><div class="skill-item">Linux</div>
                          </div>
                     </div>
                 </div>
@@ -579,14 +552,14 @@
                 <h2 class="section-title">Education</h2>
                 <div class="grid-container">
                     <div class="card education-card">
-                        <h3>Master's degree, Business Analytics</h3>
-                        <p>University of Central Oklahoma</p>
-                        <span class="duration">Aug 2022 - Dec 2024</span>
+                        <h3>Master of Science in Business Analytics</h3>
+                        <p><a href="https://www.uco.edu/programs/jcgs/cob/isom/business-analytics" target="_blank">University of Central Oklahoma</a></p>
+                        <span class="duration">Graduated Dec 2024</span>
                     </div>
                     <div class="card education-card">
-                        <h3>Bachelor of Business Administration, Business analytics</h3>
-                        <p>IBS Hyderabad</p>
-                        <span class="duration">2017 - 2020</span>
+                        <h3>Bachelor of Business Administration</h3>
+                        <p><a href="https://www.ifheindia.org/icfai-business-school-hyderabad/ibs/ugprograms/bba" target="_blank">IBS Hyderabad</a></p>
+                        <span class="duration">Graduated May 2020</span>
                     </div>
                 </div>
             </div>
