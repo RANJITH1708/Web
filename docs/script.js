@@ -10,45 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.dataset.target;
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+                // The main content panel is the element that scrolls
+                mainContent.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
             }
         });
     });
 
-    // Function to update active link based on scroll position
-    const updateActiveLink = () => {
-        let currentSectionId = '';
-        
-        contentSections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            // Check if the scroll position is within the bounds of the section
-            if (mainContent.scrollTop >= sectionTop - sectionHeight / 3) {
-                currentSectionId = section.id;
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.dataset.target === currentSectionId) {
-                link.classList.add('active');
-            }
-        });
-    };
-    
-    // Use Intersection Observer for more efficient scroll tracking
+    // Use Intersection Observer to automatically update active nav link on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const targetId = entry.target.id;
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.dataset.target === targetId);
-                });
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Add active class to the corresponding link
+                document.querySelector(`.nav-link[data-target="${targetId}"]`).classList.add('active');
             }
         });
     }, {
-        root: mainContent,
-        threshold: 0.5 // Section is considered active when 50% is visible
+        root: mainContent, // Observe intersections within the main scrolling container
+        threshold: 0.5 // Section is active when 50% is visible
     });
 
     contentSections.forEach(section => {
