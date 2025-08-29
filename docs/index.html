@@ -12,38 +12,53 @@
 </head>
 <body>
 
-    <header class="main-header">
-        <nav class="main-nav">
-            <a href="#home" class="nav-logo">Ranjith Kumar Saila</a>
-            <ul>
-                <li><a href="#projects" class="nav-link" data-target="projects">Projects</a></li>
-                <li><a href="#experience" class="nav-link" data-target="experience">Experience</a></li>
-                <li><a href="#education" class="nav-link" data-target="education">Education</a></li>
-                <li><a href="#certifications" class="nav-link" data-target="certifications">Certifications</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="content-container">
-
-        <section id="home" class="content-section">
-            <div class="profile-header">
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-info">
                 <div class="profile-picture-container">
                     <img src="icon.jpg" alt="Ranjith Saila">
                 </div>
-                <div class="profile-text">
-                    <h1>Ranjith Kumar Saila</h1>
-                    <h2>Business Analytics Consultant</h2>
-                    <div class="contact-info">
-                        <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/RANJITH1708" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.kaggle.com/ranjithsaila" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
-                    </div>
-                </div>
+                <h1>Ranjith Kumar Saila</h1>
+                <h2>Business Analytics Consultant</h2>
             </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active" data-target="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#projects" class="nav-link" data-target="projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#experience" class="nav-link" data-target="experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#education" class="nav-link" data-target="education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#certifications" class="nav-link" data-target="certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/RANJITH1708" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.kaggle.com/ranjithsaila" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section id="home" class="content-section">
+            <h2 class="section-title">Welcome</h2>
             <div class="card">
                 <h3>About Me</h3>
                 <p>A self-motivated and analytical professional with a Master's in Business Analytics and multiple years of experience in data analysis. I excel at leveraging internal and external data to analyze product performance, identify growth opportunities, and develop reports and scorecards for senior management. With a proven ability to use SQL, Excel, and business intelligence tools, I am adept at translating complex data into actionable recommendations to drive business objectives.</p>
+            </div>
+             <div class="card">
+                <h3>Technical Proficiencies</h3>
+                <div class="skills-grid">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">R</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Power BI</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">MS SQL Server</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">Firebase</span>
+                    <span class="skill-item">Advanced Excel</span>
+                    <span class="skill-item">Git & GitHub</span>
+                </div>
             </div>
         </section>
 
@@ -144,7 +159,7 @@
             </div>
         </section>
     </main>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
