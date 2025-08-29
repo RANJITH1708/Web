@@ -101,6 +101,7 @@ a:hover {
     border-radius: 8px;
     color: var(--text-muted);
     font-weight: 500;
+    cursor: pointer;
 }
 
 .main-nav .nav-link i {
