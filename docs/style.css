@@ -322,3 +322,27 @@ a:hover {
         display: none; /* Hide social links in nav on mobile */
     }
 }
+/* ===== NEW: MEDIUM SCREEN BREAKPOINT ===== */
+@media (max-width: 1200px) {
+    /* Shrink the sidebar on medium screens */
+    .sidebar {
+        width: 260px;
+        padding: 1.5rem;
+    }
+
+    /* Adjust the main content area to match the new sidebar width */
+    .main-content {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+    }
+
+    /* Make the profile picture a bit smaller */
+    .profile-picture-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info h1 {
+        font-size: 1.3rem;
+    }
+}
