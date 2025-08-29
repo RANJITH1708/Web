@@ -1,4 +1,8 @@
-/* ===== GLOBAL STYLES & VARIABLES ===== */
+/*
+    THIS IS THE FINAL AND CORRECTED CSS.
+    The rule for 'html, body' is the definitive fix for the double scrollbar issue.
+*/
+
 :root {
     --bg-color: #1a1a2e;
     --sidebar-bg: #162447;
@@ -15,14 +19,13 @@
     box-sizing: border-box;
 }
 
-/* This is the definitive fix for the double scrollbar issue */
 html, body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
     line-height: 1.7;
-    overflow: hidden; 
+    overflow: hidden; /* This is the critical fix for the double scrollbar */
 }
 
 h1, h2, h3 {
@@ -40,7 +43,6 @@ a:hover {
     color: #fff;
 }
 
-/* ===== SIDEBAR ===== */
 .sidebar {
     width: 300px;
     background-color: var(--sidebar-bg);
@@ -59,7 +61,7 @@ a:hover {
 .sidebar-inner {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: -webkit-fill-available; /* Fix for mobile viewport height */
 }
 
 .profile-info {
@@ -93,7 +95,6 @@ a:hover {
     color: var(--text-muted);
 }
 
-/* ===== NAVIGATION ===== */
 .main-nav ul {
     list-style-type: none;
 }
@@ -120,9 +121,9 @@ a:hover {
     color: #fff;
 }
 
-/* ===== CONTACT INFO ===== */
 .contact-info {
     margin-top: auto;
+    padding-top: 1rem; /* Ensure space from nav */
     text-align: center;
 }
 
@@ -136,8 +137,6 @@ a:hover {
     color: var(--primary-accent);
 }
 
-
-/* ===== MAIN CONTENT PANEL (UPDATED FOR SCROLL SNAPPING) ===== */
 .main-content {
     margin-left: 300px;
     width: calc(100% - 300px);
@@ -165,13 +164,12 @@ a:hover {
     display: inline-block;
 }
 
-/* ===== CARDS & GRIDS ===== */
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
+    padding: 1.5rem; /* Reduced padding for more content */
+    margin-bottom: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -187,11 +185,10 @@ a:hover {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-/* Skills */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -205,7 +202,6 @@ a:hover {
     font-weight: 500;
 }
 
-/* Projects */
 .project-icon {
     width: 60px;
     height: 60px;
@@ -226,7 +222,6 @@ a:hover {
     margin-left: 0.5rem;
 }
 
-/* Experience Timeline */
 .timeline {
     position: relative;
     max-width: 800px;
@@ -265,7 +260,6 @@ a:hover {
     color: var(--text-muted);
 }
 
-/* Education */
 .institution {
     color: var(--text-muted);
     font-weight: 600;
@@ -277,7 +271,6 @@ a:hover {
     color: var(--text-muted);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
     .sidebar {
         width: 260px;
@@ -307,9 +300,11 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow: auto; /* Allow normal scrolling on mobile */
+    }
     body {
         flex-direction: column;
-        overflow: auto; /* Allow normal scrolling on mobile */
     }
     .sidebar {
         position: relative;
