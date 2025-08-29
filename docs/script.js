@@ -1,25 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.content-section');
-    const header = document.querySelector('.main-header');
 
     // Smooth scroll for nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            if(targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
     // Intersection Observer to update active link on scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: `-${header.offsetHeight}px 0px 0px 0px`, // Offset by header height
-        threshold: 0.4
-    };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -32,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.4 // Trigger when 40% of a section is visible
+    });
 
     sections.forEach(section => {
         observer.observe(section);
