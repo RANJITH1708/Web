@@ -1,8 +1,3 @@
-/*
-    THIS IS THE FINAL AND CORRECTED CSS.
-    The rule for 'html, body' is the definitive fix for the double scrollbar issue.
-*/
-
 :root {
     --bg-color: #1a1a2e;
     --sidebar-bg: #162447;
@@ -19,49 +14,38 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    display: flex;
     line-height: 1.7;
-    overflow: hidden; /* This is the critical fix for the double scrollbar */
 }
 
-h1, h2, h3 {
-    font-weight: 600;
-    color: #fff;
+.portfolio-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-a {
-    color: var(--primary-accent);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #fff;
-}
-
+/* ===== SIDEBAR ===== */
 .sidebar {
     width: 300px;
-    background-color: var(--sidebar-bg);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    border-right: 1px solid var(--border-color);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    z-index: 10;
+    flex-shrink: 0;
+    margin-right: 3rem;
 }
 
 .sidebar-inner {
-    display: flex;
-    flex-direction: column;
-    min-height: -webkit-fill-available; /* Fix for mobile viewport height */
+    position: sticky;
+    top: 2rem;
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
 }
 
 .profile-info {
@@ -122,8 +106,7 @@ a:hover {
 }
 
 .contact-info {
-    margin-top: auto;
-    padding-top: 1rem; /* Ensure space from nav */
+    margin-top: 2rem;
     text-align: center;
 }
 
@@ -133,27 +116,14 @@ a:hover {
     color: var(--text-muted);
 }
 
-.contact-info a:hover {
-    color: var(--primary-accent);
-}
-
+/* ===== MAIN CONTENT PANEL ===== */
 .main-content {
-    margin-left: 300px;
-    width: calc(100% - 300px);
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+    flex-grow: 1;
 }
 
 .content-section {
-    height: 100vh;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-    overflow-y: auto;
+    padding-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 .section-title {
@@ -168,14 +138,8 @@ a:hover {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 1.5rem; /* Reduced padding for more content */
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .card h3 {
@@ -218,27 +182,25 @@ a:hover {
     display: inline-block;
     margin-top: 1rem;
 }
-.project-links i {
-    margin-left: 0.5rem;
-}
 
 .timeline {
     position: relative;
     max-width: 800px;
+    padding-top: 1rem;
 }
 .timeline::after {
     content: '';
     position: absolute;
     width: 3px;
     background-color: var(--border-color);
-    top: 0;
+    top: 1rem;
     bottom: 0;
     left: 8px;
 }
 .timeline-item {
     position: relative;
     padding-left: 40px;
-    margin-bottom: -1rem;
+    margin-bottom: 0;
 }
 .timeline-dot {
     position: absolute;
@@ -247,7 +209,7 @@ a:hover {
     border-radius: 50%;
     background-color: var(--primary-accent);
     border: 4px solid var(--bg-color);
-    top: 5px;
+    top: 1.5rem;
     left: -2px;
     z-index: 1;
 }
@@ -271,65 +233,24 @@ a:hover {
     color: var(--text-muted);
 }
 
-@media (max-width: 1200px) {
-    .sidebar {
-        width: 260px;
-        padding: 1.5rem;
-    }
-    .main-content {
-        margin-left: 260px;
-        width: calc(100% - 260px);
-    }
-    .profile-picture-container {
-        width: 120px;
-        height: 120px;
-    }
-    .profile-info h1 {
-        font-size: 1.3rem;
-    }
-}
-
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 992px) {
-    .sidebar {
-        width: 250px;
-    }
-    .main-content {
-        margin-left: 250px;
-        width: calc(100% - 250px);
-    }
-}
-
-@media (max-width: 768px) {
-    html, body {
-        overflow: auto; /* Allow normal scrolling on mobile */
-    }
-    body {
+    .portfolio-container {
         flex-direction: column;
+        padding: 1rem;
     }
     .sidebar {
-        position: relative;
         width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
+        margin-right: 0;
+        margin-bottom: 2rem;
     }
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-        height: auto;
-        overflow-y: visible;
-        scroll-snap-type: none; /* Disable snapping on mobile */
-    }
-    .content-section {
-        height: auto;
-        min-height: 100vh;
-        padding: 2rem;
+    .sidebar-inner {
+        position: static; /* Un-stick the sidebar */
     }
     .profile-info {
         display: flex;
         align-items: center;
         text-align: left;
-        margin-bottom: 1rem;
     }
     .profile-picture-container {
         width: 80px;
@@ -339,8 +260,8 @@ a:hover {
     }
     .main-nav ul {
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
     }
     .contact-info {
         display: none;
