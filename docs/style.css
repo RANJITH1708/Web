@@ -21,6 +21,7 @@ body {
     color: var(--text-color);
     display: flex;
     line-height: 1.7;
+    overflow: hidden; /* Prevent body from scrolling */
 }
 
 h1, h2, h3 {
@@ -50,7 +51,8 @@ a:hover {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Allows sidebar to scroll on short screens */
+    overflow-y: auto;
+    z-index: 10;
 }
 
 .sidebar-inner {
@@ -134,25 +136,25 @@ a:hover {
 }
 
 
-/* ===== MAIN CONTENT PANEL ===== */
+/* ===== MAIN CONTENT PANEL (UPDATED FOR SCROLL SNAPPING) ===== */
 .main-content {
     margin-left: 300px;
-    padding: 3rem;
     width: calc(100% - 300px);
+    height: 100vh; /* Make the container viewport height */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+    scroll-behavior: smooth; /* Smooth scrolling for clicks */
 }
 
 .content-section {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.content-section.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    /* Sections are now always visible, not hidden */
+    height: 100vh; /* Each section is a full screen slide */
+    scroll-snap-align: start; /* Snap to the top of each section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    overflow-y: auto; /* Allow section to scroll if content is too tall */
 }
 
 .section-title {
@@ -241,7 +243,7 @@ a:hover {
 .timeline-item {
     position: relative;
     padding-left: 40px;
-    margin-bottom: -1rem; /* Overlap cards slightly */
+    margin-bottom: -1rem;
 }
 .timeline-dot {
     position: absolute;
@@ -307,6 +309,7 @@ a:hover {
 @media (max-width: 768px) {
     body {
         flex-direction: column;
+        overflow: auto; /* Allow normal scrolling on mobile */
     }
     .sidebar {
         position: relative;
@@ -318,6 +321,13 @@ a:hover {
     .main-content {
         margin-left: 0;
         width: 100%;
+        height: auto;
+        overflow-y: visible;
+        scroll-snap-type: none; /* Disable snapping on mobile */
+    }
+    .content-section {
+        height: auto;
+        min-height: 100vh;
         padding: 2rem;
     }
     .profile-info {
@@ -338,6 +348,6 @@ a:hover {
         flex-wrap: wrap;
     }
     .contact-info {
-        display: none; /* Hide social links in nav on mobile */
+        display: none;
     }
 }
