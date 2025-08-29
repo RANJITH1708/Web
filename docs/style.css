@@ -15,6 +15,11 @@
     box-sizing: border-box;
 }
 
+html {
+    /* This enables smooth scrolling for the whole page */
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
@@ -50,7 +55,7 @@ a:hover {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Allows sidebar to scroll on short screens */
+    overflow-y: auto;
 }
 
 .sidebar-inner {
@@ -141,14 +146,22 @@ a:hover {
     width: calc(100% - 300px);
 }
 
+/* --- MODIFIED SECTION --- */
+/* The key change is here. We are no longer hiding the sections. */
 .content-section {
-    display: none;
+    /* scroll-margin-top creates an offset when we jump to a section, preventing titles from being hidden */
+    scroll-margin-top: 4rem; 
+    /* min-height and margin-bottom give sections space and help the scrollspy work correctly */
+    min-height: 50vh;
+    margin-bottom: 4rem;
+    /* We can keep the fade-in animation for a nice effect on load */
     animation: fadeIn 0.5s ease-in-out;
 }
 
-.content-section.active {
-    display: block;
-}
+/* The .active class is now only used by the sidebar links, not the content sections */
+/* So the old .content-section.active { display: block; } is no longer needed. */
+/* --- END OF MODIFIED SECTION --- */
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
