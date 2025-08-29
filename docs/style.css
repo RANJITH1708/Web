@@ -15,13 +15,14 @@
     box-sizing: border-box;
 }
 
-body {
+/* This is the definitive fix for the double scrollbar issue */
+html, body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
     line-height: 1.7;
-    overflow: hidden; /* CRITICAL: This hides the main page's scrollbar */
+    overflow: hidden; 
 }
 
 h1, h2, h3 {
@@ -141,7 +142,7 @@ a:hover {
     margin-left: 300px;
     width: calc(100% - 300px);
     height: 100vh;
-    overflow-y: scroll; /* CRITICAL: This is the ONLY scrollbar that should be visible */
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
