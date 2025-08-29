@@ -28,6 +28,7 @@ body {
     justify-content: center;
 }
 
+/* ===== SIDEBAR ===== */
 .sidebar {
     width: 350px;
     padding: 2rem;
@@ -109,6 +110,7 @@ body {
 
 .contact-info {
     text-align: center;
+    padding-top: 1rem;
 }
 
 .contact-info a {
@@ -117,6 +119,7 @@ body {
     color: var(--text-muted);
 }
 
+/* ===== MAIN CONTENT ===== */
 .main-content {
     width: 100%;
     max-width: 900px;
@@ -158,15 +161,19 @@ body {
     gap: 1.5rem;
 }
 
+/* Responsive adjustments */
 @media (max-width: 1200px) {
     body {
         flex-direction: column;
+        padding: 1rem;
     }
     .sidebar {
         width: 100%;
+        padding: 0;
+        margin-bottom: 2rem;
     }
     .sidebar-inner {
-        position: static; /* Un-stick sidebar on smaller screens */
+        position: static;
         height: auto;
     }
     html {
