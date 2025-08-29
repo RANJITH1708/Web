@@ -21,7 +21,7 @@ body {
     color: var(--text-color);
     display: flex;
     line-height: 1.7;
-    overflow: hidden; /* Prevent body from scrolling */
+    overflow: hidden; /* Add this line to lock the main page scroll */
 }
 
 h1, h2, h3 {
