@@ -50,7 +50,7 @@ a:hover {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Add this line */
+    overflow-y: auto; /* Allows sidebar to scroll on short screens */
 }
 
 .sidebar-inner {
@@ -276,6 +276,24 @@ a:hover {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 260px;
+        padding: 1.5rem;
+    }
+    .main-content {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+    }
+    .profile-picture-container {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-info h1 {
+        font-size: 1.3rem;
+    }
+}
+
 @media (max-width: 992px) {
     .sidebar {
         width: 250px;
@@ -321,29 +339,5 @@ a:hover {
     }
     .contact-info {
         display: none; /* Hide social links in nav on mobile */
-    }
-}
-/* ===== NEW: MEDIUM SCREEN BREAKPOINT ===== */
-@media (max-width: 1200px) {
-    /* Shrink the sidebar on medium screens */
-    .sidebar {
-        width: 260px;
-        padding: 1.5rem;
-    }
-
-    /* Adjust the main content area to match the new sidebar width */
-    .main-content {
-        margin-left: 260px;
-        width: calc(100% - 260px);
-    }
-
-    /* Make the profile picture a bit smaller */
-    .profile-picture-container {
-        width: 120px;
-        height: 120px;
-    }
-
-    .profile-info h1 {
-        font-size: 1.3rem;
     }
 }
