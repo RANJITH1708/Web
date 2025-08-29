@@ -21,7 +21,7 @@ body {
     color: var(--text-color);
     display: flex;
     line-height: 1.7;
-    overflow: hidden; /* Add this line to lock the main page scroll */
+    overflow: hidden; /* CRITICAL: This hides the main page's scrollbar */
 }
 
 h1, h2, h3 {
@@ -140,21 +140,20 @@ a:hover {
 .main-content {
     margin-left: 300px;
     width: calc(100% - 300px);
-    height: 100vh; /* Make the container viewport height */
-    overflow-y: scroll; /* Allow vertical scrolling */
-    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
-    scroll-behavior: smooth; /* Smooth scrolling for clicks */
+    height: 100vh;
+    overflow-y: scroll; /* CRITICAL: This is the ONLY scrollbar that should be visible */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 .content-section {
-    /* Sections are now always visible, not hidden */
-    height: 100vh; /* Each section is a full screen slide */
-    scroll-snap-align: start; /* Snap to the top of each section */
+    height: 100vh;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 3rem;
-    overflow-y: auto; /* Allow section to scroll if content is too tall */
+    overflow-y: auto;
 }
 
 .section-title {
