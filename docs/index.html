@@ -1,753 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO: Primary Meta Tags -->
-    <title>Ranjith Saila | Data & Business Analyst Portfolio</title>
-    <meta name="description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI. Discover key projects and skills.">
-    <meta name="keywords" content="Ranjith Saila, Data Analyst, Business Analyst, Portfolio, Python, SQL, Power BI, SAS, Machine Learning, Data Visualization, Business Analytics, Oklahoma">
-    <link rel="canonical" href="https://ranjith1708.github.io/Web/" />
-
-    <!-- SEO: Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ranjith1708.github.io/Web/">
-    <meta property="og:title" content="Ranjith Saila | Data & Business Analyst Portfolio">
-    <meta property="og:description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI.">
-    <meta property="og:image" content="https://placehold.co/1200x630/0a0a1a/00f2ff?text=Ranjith+Saila\nData+Analyst">
-
-    <!-- SEO: Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ranjith1708.github.io/Web/">
-    <meta property="twitter:title" content="Ranjith Saila | Data & Business Analyst Portfolio">
-    <meta property="twitter:description" content="Explore the portfolio of Ranjith Saila, a Data and Business Analyst specializing in predictive analytics, SQL, Python, and Power BI.">
-    <meta property="twitter:image" content="https://placehold.co/1200x630/0a0a1a/00f2ff?text=Ranjith+Saila\nData+Analyst">
-
-    <!-- Fonts & Stylesheets -->
+    <title>Ranjith Saila | Business Analytics Consultant</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- SEO: JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ranjith Saila",
-      "url": "https://ranjith1708.github.io/Web/",
-      "jobTitle": "Data & Business Analyst",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "University of Central Oklahoma"
-      },
-      "alumniOf": [
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Central Oklahoma"
-        },
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "IBS Hyderabad"
-        }
-      ],
-      "knowsAbout": [
-        "Data Analysis", "Predictive Analytics", "SQL", "Python", "Power BI", "Tableau", "Machine Learning", "SAS E-Miner", "Web Development", "Database Management"
-      ],
-      "sameAs": [
-        "https://github.com/RANJITH1708",
-        "https://www.linkedin.com/in/ranjith-kumar-saila-1708r/",
-        "https://www.kaggle.com/ranjithsaila"
-      ]
-    }
-    </script>
-
-    <style>
-        :root {
-            --bg-color: #0a0a1a;
-            --primary-color: #00f2ff;
-            --secondary-color: #8998b9;
-            --text-color: #e0e0e0;
-            --card-bg: rgba(20, 20, 40, 0.7);
-            --border-color: rgba(0, 242, 255, 0.2);
-            --glow-color: rgba(0, 242, 255, 0.3);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-
-        /* --- Header --- */
-        .main-header {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1001;
-            background: rgba(10, 10, 26, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            transition: background-color 0.3s ease;
-        }
-        .main-header.scrolled {
-             background: rgba(10, 10, 26, 0.95);
-        }
-        .main-header .container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
-        .main-nav { display: none; }
-        .main-nav ul { display: flex; list-style-type: none; }
-        .main-nav a { color: var(--text-color); text-decoration: none; padding: 0.5rem 1rem; transition: color 0.3s, text-shadow 0.3s; font-weight: 500;}
-        .main-nav a:hover, .main-nav a.active { color: var(--primary-color); text-shadow: 0 0 10px var(--glow-color); }
-        
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            z-index: 1002;
-        }
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-color);
-            margin: 5px 0;
-            transition: 0.4s;
-        }
-        
-        /* Mobile Nav */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: 100%;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(10, 10, 26, 0.98);
-            backdrop-filter: blur(15px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: left 0.5s ease-in-out;
-            z-index: 1001;
-        }
-        .mobile-nav.active {
-            left: 0;
-        }
-        .mobile-nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.5rem;
-            margin: 1.5rem 0;
-            transition: color 0.3s;
-        }
-        .mobile-nav a:hover {
-            color: var(--primary-color);
-        }
-
-        /* --- General Section Styling --- */
-        section { padding: 120px 0; }
-        .section-title {
-            text-align: center; font-size: 2.5rem; margin-bottom: 4rem; color: #fff;
-            font-weight: 600; position: relative;
-        }
-        .section-title::after {
-            content: ''; position: absolute; bottom: -15px; left: 50%;
-            transform: translateX(-50%); width: 60px; height: 3px;
-            background: var(--primary-color); border-radius: 2px;
-        }
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* --- Hero Section --- */
-        #hero {
-            height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            text-align: center;
-            padding-top: 70px;
-            position: relative;
-            overflow: hidden;
-        }
-        #hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translateX(-50%) translateY(-50%);
-            z-index: -2;
-            object-fit: cover;
-        }
-        #hero .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(10, 10, 26, 0.6);
-            z-index: -1;
-        }
-        #hero .container { max-width: 800px; position: relative; z-index: 1;}
-        #hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
-        #hero h1 span.typing-text { color: var(--primary-color); }
-        #hero h1 .cursor { display: inline-block; background-color: var(--primary-color); width: 4px; margin-left: 8px; animation: blink 1s infinite; }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        #hero .subtitle { font-size: 1.2rem; color: var(--secondary-color); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;}
-        .social-links { display: flex; justify-content: center; align-items: center; gap: 1.5rem; }
-        .social-links a { color: var(--secondary-color); text-decoration: none; transition: color 0.3s, transform 0.3s; }
-        .social-links a:hover { color: var(--primary-color); transform: scale(1.1); }
-        .social-links svg, .social-links i { 
-            height: 28px; 
-            width: 28px;
-            font-size: 28px; /* For Font Awesome */
-            line-height: 28px; /* Vertical alignment for Font Awesome */
-        }
-        
-        /* About / My Journey Section */
-        .journey-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-        }
-        .journey-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* --- Card & Grid --- */
-        .card {
-            background: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 2rem;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            position: relative; overflow: hidden; height: 100%;
-        }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-
-        /* --- Projects Section --- */
-        .project-card { 
-            display: flex; flex-direction: column;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
-        .project-card:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px var(--glow-color);
-        }
-        .project-card.hide { display: none; }
-        
-        .project-card h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
-        .project-role { color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 1rem; font-style: italic; }
-        .project-card p { font-size: 0.95rem; color: var(--text-color); margin-bottom: 1.5rem; flex-grow: 1; }
-        .project-card .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin-bottom: 1.5rem; }
-        .project-card .skills-list li { background-color: rgba(0, 242, 255, 0.1); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
-        .project-link { color: var(--primary-color); text-decoration: none; font-weight: 600; transition: transform 0.3s ease; margin-top: auto; }
-        .project-link:hover { transform: translateX(5px); }
-        .project-links { margin-top: auto; display: flex; gap: 1rem; flex-wrap: wrap;}
-
-        /* --- Experience (Timeline) --- */
-        .timeline { position: relative; max-width: 750px; margin: 0 auto; }
-        .timeline::after {
-            content: ''; position: absolute; width: 3px; background-color: var(--border-color);
-            top: 0; bottom: 0; left: 15px;
-        }
-        .timeline-item { position: relative; margin-bottom: 2.5rem; padding-left: 50px; }
-        .timeline-dot {
-            content: ''; position: absolute; width: 15px; height: 15px;
-            border-radius: 50%; background-color: var(--primary-color);
-            border: 3px solid var(--bg-color); top: 5px; left: 8px; z-index: 1;
-        }
-        .timeline-content h3 { color: #fff; }
-        .timeline-content .company { color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem; }
-        .timeline-content .company a { color: var(--primary-color); text-decoration: none; }
-        .timeline-content .company a:hover { text-decoration: underline; }
-        .timeline-content ul { padding-left: 1.2rem; color: var(--secondary-color); }
-        .timeline-content ul li { margin-bottom: 0.5rem; }
-
-        /* --- Skills Section --- */
-        .skills-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
-        .skill-category { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 2rem; }
-        .skill-category h4 { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-        .skill-item { background-color: rgba(0, 242, 255, 0.1); color: var(--text-color); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 500; transition: all 0.3s ease; }
-        .skill-item:hover { color: var(--primary-color); transform: translateY(-3px); }
-
-        /* --- Contact Section --- */
-        #contact .container { max-width: 700px; text-align: center;}
-        #contact p { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 2rem; }
-        .contact-btn {
-            display: inline-block; background-color: var(--primary-color); color: var(--bg-color);
-            padding: 0.8rem 2.5rem; border-radius: 50px; text-decoration: none;
-            font-weight: 600; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .contact-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--glow-color); }
-
-        /* --- Footer & Back to Top --- */
-        .main-footer { padding: 2rem 0; text-align: center; color: var(--secondary-color); border-top: 1px solid var(--border-color); margin-top: 50px; }
-
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            left: 20px; /* Changed from right to left */
-            background: var(--primary-color);
-            color: var(--bg-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            z-index: 100;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-        }
-        #back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-
-        /* --- Glowing Thunderbolt --- */
-        #glowing-thunder {
-            position: fixed; /* This is the key property */
-            z-index: 999;
-            color: #FFD700; /* Gold color */
-            font-size: 24px;
-            text-decoration: none;
-            text-shadow: 0 0 8px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
-            animation: pulse 2s infinite ease-in-out;
-            transition: transform 0.3s ease;
-        }
-
-        #glowing-thunder:hover {
-            transform: scale(1.5);
-            text-shadow: 0 0 10px #fff, 0 0 25px #FFD700, 0 0 40px #FFD700;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
-        }
-
-        /* --- Responsive --- */
-        @media (min-width: 769px) {
-            .main-nav { display: block; }
-        }
-        
-        @media (max-width: 768px) {
-            .hamburger { display: block; }
-            .container { padding: 0 1.5rem; }
-            #hero h1 { font-size: 2.2rem; }
-            #hero .subtitle { font-size: 1rem; }
-            .section-title { font-size: 2rem; }
-            .timeline::after { left: 15px; }
-            .timeline-item { padding-left: 40px; }
-            .timeline-dot { left: 8px; }
-            .journey-content { font-size: 1rem; }
-            .project-filters { gap: 0.5rem; }
-            .filter-btn { padding: 0.4rem 1rem; font-size: 0.9rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Thunderbolt moved to be the first element in the body -->
-    <a href="./hobbies.html" id="glowing-thunder" aria-label="Discover my hobbies"><i class="fa-solid fa-bolt"></i></a>
-    
-    <!-- Header -->
-    <header class="main-header" id="main-header">
-        <div class="container">
-            <a href="#" class="logo">Ranjith Kumar Saila</a>
+
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-info">
+                <div class="profile-picture-container">
+                    <img src="your-photo.jpg" alt="Ranjith Saila">
+                </div>
+                <h1>Ranjith Kumar Saila</h1>
+                <h2>Business Analytics Consultant</h2>
+            </div>
+
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                    <li><a href="#home" class="nav-link active" data-target="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#projects" class="nav-link" data-target="projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#experience" class="nav-link" data-target="experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#education" class="nav-link" data-target="education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    </ul>
             </nav>
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
+
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/RANJITH1708" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.kaggle.com/ranjithsaila" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
             </div>
         </div>
-    </header>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="home" class="content-section active">
+            <h2 class="section-title">Welcome</h2>
+            <div class="card">
+                <h3>About Me</h3>
+                <p>A self-motivated and analytical professional with a Master's in Business Analytics and multiple years of experience in data analysis. I excel at leveraging internal and external data to analyze product performance, identify growth opportunities, and develop reports and scorecards for senior management. With a proven ability to use SQL, Excel, and business intelligence tools, I am adept at translating complex data into actionable recommendations to drive business objectives.</p>
+            </div>
+             <div class="card">
+                <h3>Technical Proficiencies</h3>
+                <div class="skills-grid">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">R</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Power BI</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">MS SQL Server</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">Firebase</span>
+                    <span class="skill-item">Advanced Excel</span>
+                    <span class="skill-item">Git & GitHub</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="icon128.png" alt="Supbyte Icon" class="project-icon">
+                    <h3>Supbyte - Sound Booster & Equalizer</h3>
+                    <p class="project-role">Lead Developer | Chrome Extension</p>
+                    <p>Engineered and launched a browser extension on the Google Chrome Web Store. Implemented core features including volume boosting, a 5-band equalizer, and an audio compressor using vanilla JavaScript and Chrome APIs.</p>
+                    <div class="project-links">
+                        <a href="https://chromewebstore.google.com/detail/bdiihbekcobpmjfgoiimehpgiokihaed?utm_source=item-share-cb" target="_blank">View on Chrome Store <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Oklahoma Crime Data Analysis</h3>
+                    <p class="project-role">Data Analyst | MySQL, Python, Power BI</p>
+                    <p>Designed a normalized MySQL database and analyzed 50,000+ crime records to uncover trends. Developed a Random Forest model (R²=0.9597) and created Power BI dashboards to visualize a 15% crime increase.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/RANJITH1708/Oklahoma_Crime_Data" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>AMEX Credit Card Default Prediction</h3>
+                    <p class="project-role">Predictive Analytics | Python, Scikit-learn, SAS Miner</p>
+                    <p>Developed credit card default prediction models for American Express using Logistic Regression, Random Forest, and Neural Networks, achieving ~92% predictive accuracy.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/RANJITH1708/AMEX-Predicting-Credit-Card-Default-Risk" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="content-section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <h3>Freelance Business Analytics Consultant</h3>
+                        <p class="company"><a href="https://www.ceaspay.com/" target="_blank">Ceaspay</a> | Feb 2025 – Present</p>
+                        <ul>
+                            <li>Analyzed client business processes, leading to the design and development of a multi-user web application that improved management efficiency by 40%.</li>
+                            <li>Engineered a comprehensive admin dashboard with Chart.js to visualize KPIs, delivering actionable insights that reduced the compensation cycle time by 50%.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <h3>Data Analyst</h3>
+                        <p class="company">HazonTechnologies | Aug 2020 - Jul 2022</p>
+                        <ul>
+                            <li>Developed statistical models in Python for the company's RISE platform to predict institutional ranking outcomes.</li>
+                            <li>Created Power BI dashboards to visualize model outputs, helping clients identify areas for score improvement.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="content-section">
+            <h2 class="section-title">Education</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Master of Science in Business Analytics</h3>
+                    <p class="institution">University of Central Oklahoma</p>
+                    <span class="duration">Graduated Dec 2024</span>
+                </div>
+                <div class="card">
+                    <h3>Bachelor of Business Administration</h3>
+                    <p class="institution">IBS Hyderabad</p>
+                    <span class="duration">Graduated May 2020</span>
+                </div>
+            </div>
+        </section>
+
+        </main>
     
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <video id="hero-video" autoplay loop muted playsinline>
-                <source src="background-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay"></div>
-            <div class="container">
-                <h1>Hi, I'm <span class="typing-text"></span><span class="cursor"></span></h1>
-                <p class="subtitle">My drive as a data analyst stems from a constant desire to learn and apply new skills, particularly in the ever-evolving fields of data and machine learning.</p>
-                <div class="social-links">
-                    <a href="https://github.com/RANJITH1708" target="_blank" aria-label="GitHub">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" aria-label="LinkedIn">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>LinkedIn</title><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="https://www.kaggle.com/ranjithsaila" target="_blank" aria-label="Kaggle">
-                        <i class="fa-brands fa-kaggle"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Academic Projects Section -->
-        <section id="projects" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Academic Projects</h2>
-                <div class="grid-container">
-                    <div class="card project-card">
-                        <h3>Predicting Optimal Fertilizers</h3>
-                        <p class="project-role">Python, XGBoost, LightGBM, Optuna</p>
-                        <p>Developed a weighted ensemble of tuned XGBoost/LightGBM models, achieving a final leaderboard score of 0.35408. Optimized models by automating hyperparameter search over 100+ trials with Optuna and GPU acceleration.</p>
-                        <div class="project-links">
-                           <a href="https://github.com/RANJITH1708/Kaggle-Fertilizer-Project" class="project-link" target="_blank">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card project-card">
-                        <h3>Oklahoma Crime Data Analysis</h3>
-                        <p class="project-role">MySQL, Python, SQL, Random Forest, Power BI</p>
-                        <p>Designed a normalized MySQL database and analysed 50,000+ crime records to uncover trends. Developed a Random Forest model (R²=0.9597) and created Power BI dashboards to visualize a 15% crime increase.</p>
-                         <div class="project-links">
-                           <a href="https://github.com/RANJITH1708/Oklahoma_Crime_Data" class="project-link" target="_blank">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card project-card">
-                        <h3>American Express Credit Card Default Prediction (Capstone)</h3>
-                        <p class="project-role">Python, Scikit-learn, SAS Miner</p>
-                        <p>Developed credit card default prediction models for American Express using Logistic Regression, Random Forest, and Neural Networks, achieving ~92% predictive accuracy.</p>
-                         <div class="project-links">
-                           <a href="https://github.com/RANJITH1708/AMEX-Predicting-Credit-Card-Default-Risk" class="project-link" target="_blank">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="timeline">
-                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content card">
-                            <h3>Freelance Developer (Data & Backend Focus)</h3>
-                            <p class="company"><a href="https://www.ceaspay.com/" target="_blank">Ceaspay</a> | May 2025</p>
-                            <ul>
-                                <li>Developed a multi-user web application for Ceaspay using Firebase, implementing Firestore security rules for role-based access control (RBAC) to differentiate agent and admin functionalities.</li>
-                                <li>Built a responsive agent portal that streamlined the customer onboarding process, improving management efficiency by 40% through real-time data synchronization with Firestore's onSnapshot listener.</li>
-                                <li>Engineered a comprehensive admin dashboard with Chart.js to visualize key performance indicators (KPIs) like conversion rates and agent earnings, reducing the compensation cycle time by 50%.</li>
-                                <li>Integrated the Tawk.to third-party live chat service to capture real-time customer support interactions and enhance user engagement.</li>
-                                <li>Managed the end-to-end deployment process on Vercel, configuring a CI/CD pipeline with GitHub Actions to automate builds and ensure continuous, reliable software updates.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content card">
-                            <h3>Data Analyst</h3>
-                            <p class="company">HazonTechnologies | Aug 2020 - Jul 2022</p>
-                            <ul>
-                                <li>Developed statistical models in Python for the company's RISE platform to predict institutional ranking outcomes.</li>
-                                <li>Used SQL and Python to extract and aggregate data from diverse institutional sources for analysis.</li>
-                                <li>Created Power BI dashboards to visualize model outputs, helping clients identify areas for score improvement.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content card">
-                            <h3>Project Coordinator</h3>
-                            <p class="company"><a href="https://www.greengangarts.com/" target="_blank">Green Gang Arts</a> | Mar 2018 – Jan 2020</p>
-                            <ul>
-                                <li>Successfully managed project requirements and fostered positive relationships with more than 50 clients.</li>
-                                <li>Coordinated all timelines and resources for over 50 projects, achieving a 100% on-time delivery rate.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content card">
-                            <h3>Insurance Agent Trainee</h3>
-                            <p class="company">Shriram Life Insurance · Internship | May 2020 - Jul 2020</p>
-                            <ul>
-                                <li>Analysed needs of 30+ clients to develop tailored insurance solutions, resulting in 9 policy sales.</li>
-                            </ul>
-                        </div>
-                    </div>
-                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content card">
-                            <h3>Accounting Trainee</h3>
-                            <p class="company">John's Business School · Internship | Mar 2019 - Jul 2019</p>
-                            <ul>
-                                <li>Processed and reconciled financial data, ensuring 100% compliance and data accuracy.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-container">
-                    <div class="skill-category">
-                         <h4>Programming & Scripting</h4>
-                         <div class="skills-grid">
-                            <div class="skill-item">Python</div>
-                            <div class="skill-item">R</div>
-                            <div class="skill-item">SQL</div>
-                            <div class="skill-item">VBA</div>
-                            <div class="skill-item">DAX</div>
-                         </div>
-                    </div>
-                    <div class="skill-category">
-                         <h4>Databases</h4>
-                         <div class="skills-grid">
-                            <div class="skill-item">Microsoft SQL Server</div>
-                            <div class="skill-item">MySQL</div>
-                            <div class="skill-item">Cloud Firestore</div>
-                            <div class="skill-item">Supabase</div>
-                         </div>
-                    </div>
-                    <div class="skill-category">
-                         <h4>Technologies</h4>
-                         <div class="skills-grid">
-                            <div class="skill-item">Power BI</div><div class="skill-item">Tableau</div><div class="skill-item">MS Office Suite</div><div class="skill-item">Firebase</div><div class="skill-item">Vercel</div><div class="skill-item">Git & GitHub</div><div class="skill-item">Jupyter Notebook</div><div class="skill-item">SPSS</div><div class="skill-item">SAS Studio</div><div class="skill-item">SAS Miner</div><div class="skill-item">Linux</div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Education Section -->
-        <section id="education" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="grid-container">
-                    <div class="card education-card">
-                        <h3>Master of Science in Business Analytics</h3>
-                        <p><a href="https://www.uco.edu/programs/jcgs/cob/isom/business-analytics" target="_blank">University of Central Oklahoma</a></p>
-                        <span class="duration">Graduated Dec 2024</span>
-                    </div>
-                    <div class="card education-card">
-                        <h3>Bachelor of Business Administration</h3>
-                        <p><a href="https://www.ifheindia.org/icfai-business-school-hyderabad/ibs/ugprograms/bba" target="_blank">IBS Hyderabad</a></p>
-                        <span class="duration">Graduated May 2020</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                <p>I'm currently seeking new opportunities and would love to hear from you. Whether you have a question or just want to connect, feel free to reach out!</p>
-                <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" class="contact-btn">Connect on LinkedIn</a>
-            </div>
-        </section>
-
-    </main>
-    
-    <!-- Back to Top Button -->
-    <a href="#hero" id="back-to-top" aria-label="Back to top">↑</a>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2025 Ranjith. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        // --- 1. SCROLL-BASED ANIMATIONS & HEADER ---
-        const header = document.getElementById('main-header');
-        const backToTopBtn = document.getElementById('back-to-top');
-        const faders = document.querySelectorAll('.fade-in');
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        const appearOptions = {
-            threshold: 0.2,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-
-        window.addEventListener('scroll', () => {
-            // Header shrink
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            // Back to top button visibility
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
-        // Hamburger Menu Toggle
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-        });
-        
-        // Close mobile nav when a link is clicked
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-            });
-        });
-
-        // --- 2. TYPING EFFECT ---
-        const typingText = document.querySelector('.typing-text');
-        const words = ["Ranjith Saila.", "a Data Analyst."];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentWord = words[wordIndex];
-            const currentChar = isDeleting ? currentWord.substring(0, charIndex - 1) : currentWord.substring(0, charIndex + 1);
-            
-            typingText.textContent = currentChar;
-
-            if (!isDeleting && charIndex < currentWord.length) {
-                charIndex++;
-                setTimeout(type, 120);
-            } else if (isDeleting && charIndex > 0) {
-                charIndex--;
-                setTimeout(type, 80);
-            } else {
-                isDeleting = !isDeleting;
-                if (!isDeleting) {
-                    wordIndex = (wordIndex + 1) % words.length;
-                }
-                setTimeout(type, 1200);
-            }
-        }
-        type();
-        
-        // --- 3. PROJECT CARD 3D TILT EFFECT ---
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const { width, height } = rect;
-                
-                const rotateX = (y / height - 0.5) * -20; // Max rotation 10deg
-                const rotateY = (x / width - 0.5) * 20;  // Max rotation 10deg
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
-        });
-        
-        // --- 4. PROJECT FILTERING ---
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const allProjectCards = document.querySelectorAll('.project-card[data-category]');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.dataset.filter;
-
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Show/hide cards
-                allProjectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // --- 5. RANDOM GLOWING THUNDERBOLT POSITION ---
-        const thunder = document.getElementById('glowing-thunder');
-        if (thunder) {
-            // Set a random vertical position
-            const verticalPadding = 100; // px from top/bottom
-            const randomTop = verticalPadding + Math.random() * (window.innerHeight - verticalPadding * 2);
-            thunder.style.top = `${randomTop}px`;
-
-            // Randomly choose left or right side and position it
-            const horizontalPadding = 40; // max distance from side edge
-            if (Math.random() < 0.5) {
-                // Place on the left side
-                thunder.style.left = `${Math.random() * horizontalPadding}px`;
-                thunder.style.right = 'auto';
-            } else {
-                // Place on the right side
-                thunder.style.right = `${Math.random() * horizontalPadding}px`;
-                thunder.style.left = 'auto';
-            }
-        }
-
-    });
-    </script>
-
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6856d519b95ca2190efff2bd/1iu9j0qt5';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
