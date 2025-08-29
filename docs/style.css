@@ -1,3 +1,4 @@
+/* ===== GLOBAL STYLES & VARIABLES ===== */
 :root {
     --bg-color: #1a1a2e;
     --sidebar-bg: #162447;
@@ -14,37 +15,48 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.7;
     display: flex;
-    justify-content: center;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #fff;
+}
+
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
 }
 
 /* ===== SIDEBAR ===== */
 .sidebar {
-    width: 350px;
+    width: 300px;
+    background-color: var(--sidebar-bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    border-right: 1px solid var(--border-color);
     padding: 2rem;
-    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allows sidebar to scroll on short screens */
 }
 
 .sidebar-inner {
-    position: sticky;
-    top: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    background-color: var(--sidebar-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
+    height: 100%;
 }
 
 .profile-info {
@@ -78,10 +90,7 @@ body {
     color: var(--text-muted);
 }
 
-.main-nav {
-    margin-bottom: auto; /* Pushes contact info to the bottom */
-}
-
+/* ===== NAVIGATION ===== */
 .main-nav ul {
     list-style-type: none;
 }
@@ -108,9 +117,10 @@ body {
     color: #fff;
 }
 
+/* ===== CONTACT INFO ===== */
 .contact-info {
+    margin-top: auto;
     text-align: center;
-    padding-top: 1rem;
 }
 
 .contact-info a {
@@ -119,19 +129,30 @@ body {
     color: var(--text-muted);
 }
 
-/* ===== MAIN CONTENT ===== */
+.contact-info a:hover {
+    color: var(--primary-accent);
+}
+
+
+/* ===== MAIN CONTENT PANEL ===== */
 .main-content {
-    width: 100%;
-    max-width: 900px;
+    margin-left: 300px;
+    padding: 3rem;
+    width: calc(100% - 300px);
 }
 
 .content-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    scroll-snap-align: start;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .section-title {
@@ -142,12 +163,19 @@ body {
     display: inline-block;
 }
 
+/* ===== CARDS & GRIDS ===== */
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 2rem;
     margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .card h3 {
@@ -157,26 +185,159 @@ body {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
-/* Responsive adjustments */
+/* Skills */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+.skill-item {
+    background-color: rgba(27, 119, 183, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Projects */
+.project-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.project-role {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+.project-links a {
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+}
+.project-links i {
+    margin-left: 0.5rem;
+}
+
+/* Experience Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 8px;
+}
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: -1rem; /* Overlap cards slightly */
+}
+.timeline-dot {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: var(--primary-accent);
+    border: 4px solid var(--bg-color);
+    top: 5px;
+    left: -2px;
+    z-index: 1;
+}
+.company {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.timeline-content ul {
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+}
+
+/* Education */
+.institution {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+.duration {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
+    .sidebar {
+        width: 260px;
+        padding: 1.5rem;
+    }
+    .main-content {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+    }
+    .profile-picture-container {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-info h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 250px;
+    }
+    .main-content {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+@media (max-width: 768px) {
     body {
         flex-direction: column;
-        padding: 1rem;
     }
     .sidebar {
+        position: relative;
         width: 100%;
-        padding: 0;
-        margin-bottom: 2rem;
-    }
-    .sidebar-inner {
-        position: static;
         height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
     }
-    html {
-        scroll-snap-type: none; /* Disable snapping on mobile for better usability */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 2rem;
+    }
+    .profile-info {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    .profile-picture-container {
+        width: 80px;
+        height: 80px;
+        margin: 0 1.5rem 0 0;
+        flex-shrink: 0;
+    }
+    .main-nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .contact-info {
+        display: none; /* Hide social links in nav on mobile */
     }
 }
