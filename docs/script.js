@@ -44,3 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setActiveSection('home');
     }
 });
+
+window.addEventListener('popstate', () => {
+    const currentHash = window.location.hash.substring(1) || 'home';
+    setActiveSection(currentHash);
+});
