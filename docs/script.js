@@ -1,46 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const contentSections = document.querySelectorAll('.content-section');
+    const mainContent = document.querySelector('.main-content');
 
-    // Function to set the active section based on a target ID
-    const setActiveSection = (targetId) => {
-        // Hide all content sections and remove active class from all links
-        contentSections.forEach(section => {
-            section.classList.remove('active');
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-
-        // Show the target content section and set the corresponding link to active
-        const targetSection = document.getElementById(targetId);
-        const targetLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
-
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
-        if (targetLink) {
-            targetLink.classList.add('active');
-        }
-    };
-
-    // Add click event listener to each navigation link
+    // Function to handle click-to-scroll
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default anchor link behavior
+            e.preventDefault();
             const targetId = link.dataset.target;
-            setActiveSection(targetId);
-            // Optionally update the URL hash
-            window.history.pushState(null, null, `#${targetId}`);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
-    // Check for a hash in the URL on initial page load
-    const currentHash = window.location.hash.substring(1);
-    if (currentHash && document.getElementById(currentHash)) {
-        setActiveSection(currentHash);
-    } else {
-        // Default to the 'home' section if no valid hash is present
-        setActiveSection('home');
-    }
+    // Function to update active link based on scroll position
+    const updateActiveLink = () => {
+        let currentSectionId = '';
+        
+        contentSections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            // Check if the scroll position is within the bounds of the section
+            if (mainContent.scrollTop >= sectionTop - sectionHeight / 3) {
+                currentSectionId = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.target === currentSectionId) {
+                link.classList.add('active');
+            }
+        });
+    };
+    
+    // Use Intersection Observer for more efficient scroll tracking
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetId = entry.target.id;
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.target === targetId);
+                });
+            }
+        });
+    }, {
+        root: mainContent,
+        threshold: 0.5 // Section is considered active when 50% is visible
+    });
+
+    contentSections.forEach(section => {
+        observer.observe(section);
+    });
 });
