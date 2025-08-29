@@ -50,6 +50,7 @@ a:hover {
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    overflow-y: auto; /* Add this line */
 }
 
 .sidebar-inner {
