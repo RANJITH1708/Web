@@ -9,6 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .timeline-content .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 8px;
+            object-fit: contain;
+            background-color: #f0f0f0; /* Light background for placeholder */
+        }
+    </style>
 </head>
 <body>
 
@@ -46,7 +61,7 @@
             <h2 class="section-title">Welcome</h2>
             <div class="card">
                 <h3>About Me</h3>
-                <p>A self-motivated and analytical professional with a Master's in Business Analytics and multiple years of experience in data analysis. I excel at leveraging internal and external data to analyze product performance, identify growth opportunities, and develop reports and scorecards for senior management. With a proven ability to use SQL, Excel, and business intelligence tools, I am adept at translating complex data into actionable recommendations to drive business objectives.</p>
+                [cite_start]<p>A self-motivated and analytical professional with a Master's in Business Analytics and multiple years of experience in data analysis[cite: 3]. I excel at leveraging internal and external data to analyze product performance, identify growth opportunities, and develop reports and scorecards for senior management. [cite_start]With a proven ability to use SQL, Excel, and business intelligence tools, I am adept at translating complex data into actionable recommendations to drive business objectives[cite: 3, 4, 5].</p>
             </div>
              <div class="card">
                 <h3>Technical Proficiencies</h3>
@@ -81,7 +96,7 @@
                     <img src="icon128.png" alt="Supbyte Icon" class="project-icon">
                     <h3>Supbyte - Sound Booster & Equalizer</h3>
                     <p class="project-role">Lead Developer | Chrome Extension</p>
-                    <p>Engineered and launched a browser extension on the Google Chrome Web Store. Implemented core features including volume boosting, a 5-band equalizer, and an audio compressor using vanilla JavaScript and Chrome APIs.</p>
+                    <p>Engineered and launched a browser extension on the Google Chrome Web Store. [cite_start]Implemented core features including volume boosting, a 5-band equalizer, and an audio compressor using vanilla JavaScript and Chrome APIs[cite: 48].</p>
                     <div class="project-links">
                         <a href="https://chromewebstore.google.com/detail/bdiihbekcobpmjfgoiimehpgiokihaed" target="_blank">View on Chrome Store <i class="fas fa-external-link-alt"></i></a>
                     </div>
@@ -90,25 +105,36 @@
                     <img src="tablelens128.png" alt="TableLens Icon" class="project-icon">
                     <h3>TableLens - Edit, Visualize & Export Tables</h3>
                     <p class="project-role">Lead Developer | Chrome Extension</p>
-                    <p>An advanced browser extension for exporting, live-editing, filtering, sorting, and visualizing HTML tables. Create charts directly from web data.</p>
+                    <p>An advanced browser extension for exporting, live-editing, filtering, sorting, and visualizing HTML tables. [cite_start]Create charts directly from web data[cite: 47].</p>
                     <div class="project-links">
                         <a href="https://chromewebstore.google.com/detail/tablelens-edit-visualize/lahononablbbfocabaeliibgiicgbjkl" target="_blank">View on Chrome Store <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="card">
+                    <img src="oklahoma_crime_icon.png" alt="Oklahoma Crime Project Icon" class="project-icon">
                     <h3>Oklahoma Crime Data Analysis</h3>
                     <p class="project-role">Data Analyst | MySQL, Python, Power BI</p>
-                    <p>Designed a normalized MySQL database and analyzed 50,000+ crime records to uncover trends. Developed a Random Forest model (R²=0.9597) and created Power BI dashboards to visualize a 15% crime increase.</p>
+                    <p>Designed a normalized MySQL database and analyzed crime records to uncover trends. [cite_start]Developed a Random Forest model (R²=0.9597) and created Power BI dashboards to visualize key findings[cite: 51, 52].</p>
                     <div class="project-links">
                         <a href="https://github.com/RANJITH1708/Oklahoma_Crime_Data" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="card">
+                    <img src="amex_icon.png" alt="AMEX Project Icon" class="project-icon">
                     <h3>AMEX Credit Card Default Prediction</h3>
                     <p class="project-role">Predictive Analytics | Python, Scikit-learn, SAS Miner</p>
-                    <p>Developed credit card default prediction models for American Express using Logistic Regression, Random Forest, and Neural Networks, achieving ~92% predictive accuracy.</p>
+                    [cite_start]<p>Developed credit card default prediction models for American Express using Logistic Regression, Random Forest, and Neural Networks, achieving ~92% predictive accuracy[cite: 53, 54].</p>
                     <div class="project-links">
                         <a href="https://github.com/RANJITH1708/AMEX-Predicting-Credit-Card-Default-Risk" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="fertilizer_icon.png" alt="Fertilizer Project Icon" class="project-icon">
+                    <h3>Predicting Optimal Fertilizers</h3>
+                    <p class="project-role">Kaggle Competition | Python, XGBoost, Optuna</p>
+                    [cite_start]<p>Achieved a Kaggle score of 0.35408 by developing an ensemble of XGBoost/LightGBM models optimized with Optuna for a multi-class classification challenge[cite: 50].</p>
+                    <div class="project-links">
+                        <a href="https://github.com/RANJITH1708/Predicting-Optimal-Fertilizers" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -120,22 +146,78 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content card">
-                        <h3>Freelance Business Analytics Consultant</h3>
-                        <p class="company"><a href="https://www.ceaspay.com/" target="_blank">Ceaspay</a> | Feb 2025 – Present</p>
+                        <div class="card-header">
+                            <img src="ceaspay_logo.png" alt="Ceaspay Logo" class="company-logo">
+                            <div>
+                                <h3>Freelance Business Analyst</h3>
+                                <p class="company"><a href="https://www.ceaspay.com/" target="_blank">Ceaspay</a> | Feb 2025 – Present</p>
+                            </div>
+                        </div>
                         <ul>
-                            <li>Analyzed client business processes, leading to the design and development of a multi-user web application that improved management efficiency by 40%.</li>
-                            <li>Engineered a comprehensive admin dashboard with Chart.js to visualize KPIs, delivering actionable insights that reduced the compensation cycle time by 50%.</li>
+                            [cite_start]<li>Developed a multi-user web app with Firebase, improving agent efficiency by 40% with real-time data sync[cite: 25, 26].</li>
+                            [cite_start]<li>Engineered an admin dashboard with Chart.js to visualize KPIs, reducing the compensation cycle time by 50%[cite: 27].</li>
                         </ul>
                     </div>
                 </div>
-                 <div class="timeline-item">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content card">
-                        <h3>Data Analyst</h3>
-                        <p class="company">HazonTechnologies | Aug 2020 - Jul 2022</p>
+                        <div class="card-header">
+                            <img src="hazon_logo.png" alt="Hazon Technologies Logo" class="company-logo">
+                            <div>
+                                <h3>Data Analyst</h3>
+                                <p class="company">Hazon Technologies | Aug 2020 - Jul 2022</p>
+                            </div>
+                        </div>
                         <ul>
-                            <li>Developed statistical models in Python for the company's RISE platform to predict institutional ranking outcomes.</li>
-                            <li>Created Power BI dashboards to visualize model outputs, helping clients identify areas for score improvement.</li>
+                            [cite_start]<li>Developed statistical models in Python for the RISE platform to predict institutional ranking outcomes[cite: 32].</li>
+                            [cite_start]<li>Created Power BI dashboards to visualize model outputs, helping clients identify areas for score improvement[cite: 35].</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="shriram_logo.png" alt="Shriram Life Insurance Logo" class="company-logo">
+                            <div>
+                                <h3>Insurance Agent Trainee</h3>
+                                <p class="company">Shriram Life Insurance | May 2020 – Jul 2020</p>
+                            </div>
+                        </div>
+                        <ul>
+                            [cite_start]<li>Conducted in-depth needs analysis for over 30 clients to develop tailored insurance solutions, securing 9 policy sales[cite: 38].</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="greengang_logo.png" alt="Green Gang Arts Logo" class="company-logo">
+                            <div>
+                                <h3>Project Coordinator</h3>
+                                <p class="company">Green Gang Arts | Mar 2018 – Jan 2020</p>
+                            </div>
+                        </div>
+                        <ul>
+                            [cite_start]<li>Coordinated timelines and resources for over 50 projects, achieving a 100% on-time delivery rate[cite: 40, 41].</li>
+                            [cite_start]<li>Improved operational efficiency by 10% by streamlining project data management using Excel[cite: 42].</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="johnsbusiness_logo.png" alt="John’s Business School Logo" class="company-logo">
+                            <div>
+                                <h3>Accounting Trainee</h3>
+                                <p class="company">John’s Business School | Mar 2019 – Jul 2019</p>
+                            </div>
+                        </div>
+                        <ul>
+                            [cite_start]<li>Processed and reconciled financial data, ensuring 100% compliance and accuracy in monthly journal entries and reports[cite: 44].</li>
                         </ul>
                     </div>
                 </div>
@@ -148,12 +230,12 @@
                 <div class="card">
                     <h3>Master of Science in Business Analytics</h3>
                     <p class="institution">University of Central Oklahoma</p>
-                    <span class="duration">Graduated Dec 2024</span>
+                    [cite_start]<span class="duration">Graduated Dec 2024</span> [cite: 7, 8, 9]
                 </div>
                 <div class="card">
                     <h3>Bachelor of Business Administration</h3>
-                    <p class="institution">IBS Hyderabad</p>
-                    <span class="duration">Graduated May 2020</span>
+                    <p class="institution">ICFAI Business School</p>
+                    [cite_start]<span class="duration">Graduated May 2020</span> [cite: 11, 12]
                 </div>
             </div>
         </section>
