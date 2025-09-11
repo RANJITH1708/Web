@@ -10,17 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .timeline-content .card-header {
+        .timeline-content .card-header, .education-card .card-header, .cert-card .card-header {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
         }
-        .company-logo {
+        .company-logo, .institution-logo, .cert-logo {
             width: 50px;
             height: 50px;
             margin-right: 15px;
             border-radius: 8px;
             object-fit: contain;
+            flex-shrink: 0;
             background-color: #f0f0f0; /* Light background for placeholder */
         }
         .institution, .company a, .institution a {
@@ -234,18 +235,28 @@
         <section id="education" class="content-section">
             <h2 class="section-title">Education</h2>
             <div class="card-grid">
-                <div class="card">
-                    <h3>Master of Science in Business Analytics</h3>
-                    <p class="institution">
-                        <a href="https://www.uco.edu/programs/jcgs/cob/isom/business-analytics" target="_blank">University of Central Oklahoma</a>
-                    </p>
+                <div class="card education-card">
+                    <div class="card-header">
+                        <img src="uco_logo.png" alt="University of Central Oklahoma Logo" class="institution-logo">
+                        <div>
+                           <h3>Master of Science in Business Analytics</h3>
+                            <p class="institution">
+                                <a href="https://www.uco.edu/programs/jcgs/cob/isom/business-analytics" target="_blank">University of Central Oklahoma</a>
+                            </p>
+                        </div>
+                    </div>
                     <span class="duration">Graduated Dec 2024</span>
                 </div>
-                <div class="card">
-                    <h3>Bachelor of Business Administration</h3>
-                    <p class="institution">
-                        <a href="https://www.icfaiuniversity.in/ifhe/bba-program.html" target="_blank">ICFAI Business School</a>
-                    </p>
+                <div class="card education-card">
+                    <div class="card-header">
+                        <img src="icfai_logo.png" alt="ICFAI Business School Logo" class="institution-logo">
+                        <div>
+                            <h3>Bachelor of Business Administration</h3>
+                            <p class="institution">
+                                <a href="https://www.icfaiuniversity.in/ifhe/bba-program.html" target="_blank">ICFAI Business School</a>
+                            </p>
+                        </div>
+                    </div>
                     <span class="duration">Graduated May 2020</span>
                 </div>
             </div>
@@ -254,21 +265,41 @@
         <section id="certifications" class="content-section">
             <h2 class="section-title">Certifications</h2>
             <div class="card-grid">
-                <div class="card">
-                    <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
-                    <p>Microsoft | 2025</p>
+                <div class="card cert-card">
+                    <div class="card-header">
+                         <img src="powerbi_cert_logo.png" alt="Power BI Certification Logo" class="cert-logo">
+                         <div>
+                            <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
+                            <p>Microsoft | 2025</p>
+                         </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Tableau Certified Data Analyst</h3>
-                    <p>Tableau | 2025</p>
+                <div class="card cert-card">
+                    <div class="card-header">
+                        <img src="tableau_cert_logo.png" alt="Tableau Certification Logo" class="cert-logo">
+                        <div>
+                            <h3>Tableau Certified Data Analyst</h3>
+                            <p>Tableau | 2025</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Google Data Analytics Professional Certificate</h3>
-                    <p>Coursera / Google | 2024</p>
+                <div class="card cert-card">
+                     <div class="card-header">
+                        <img src="google_cert_logo.png" alt="Google Data Analytics Logo" class="cert-logo">
+                        <div>
+                            <h3>Google Data Analytics Professional Certificate</h3>
+                            <p>Coursera / Google | 2024</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Microsoft Certified: Azure Data Fundamentals (DP-900)</h3>
-                    <p>Microsoft | 2024</p>
+                <div class="card cert-card">
+                     <div class="card-header">
+                        <img src="azure_cert_logo.png" alt="Azure Data Fundamentals Logo" class="cert-logo">
+                        <div>
+                            <h3>Microsoft Certified: Azure Data Fundamentals (DP-900)</h3>
+                            <p>Microsoft | 2024</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
