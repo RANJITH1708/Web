@@ -258,7 +258,7 @@ a:hover {
     border-radius: 50%;
     background-color: var(--primary-accent);
     border: 4px solid var(--bg-color);
-    top: 5px;
+    top: 32px; /* Adjusted for better vertical alignment with text */
     left: -2px;
     z-index: 1;
 }
@@ -287,7 +287,6 @@ a:hover {
 @media (max-width: 1200px) {
     .sidebar {
         width: 260px;
-        padding: 1.5rem;
     }
     .main-content {
         margin-left: 260px;
@@ -312,22 +311,34 @@ a:hover {
     }
 }
 
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
 @media (max-width: 768px) {
     body {
         flex-direction: column;
     }
+
+    /* --- Sidebar becomes top header --- */
     .sidebar {
         position: relative;
         width: 100%;
         height: auto;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
+        padding: 1rem 1.5rem;
     }
+    .sidebar-inner {
+        height: auto;
+    }
+
+    /* --- Main content takes full width --- */
     .main-content {
         margin-left: 0;
         width: 100%;
-        padding: 2rem;
+        padding: 2rem 1.5rem;
     }
+
+    /* --- Compact Profile & Nav --- */
     .profile-info {
         display: flex;
         align-items: center;
@@ -335,17 +346,70 @@ a:hover {
         margin-bottom: 1rem;
     }
     .profile-picture-container {
-        width: 80px;
-        height: 80px;
-        margin: 0 1.5rem 0 0;
+        width: 70px;
+        height: 70px;
+        margin: 0 1rem 0 0;
         flex-shrink: 0;
+    }
+    .profile-info h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+    .profile-info h2 {
+        font-size: 0.9rem;
     }
     .main-nav ul {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 1rem;
     }
+    .main-nav .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    .main-nav .nav-link i {
+        margin-right: 0.5rem;
+    }
+
+    /* --- Re-enable and style contact info --- */
     .contact-info {
-        display: none;
+        display: block;
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+    .contact-info a {
+        font-size: 1.4rem;
+    }
+
+    /* --- Adjust content typography and spacing --- */
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .card h3 {
+        font-size: 1.2rem;
+    }
+    .timeline-item .card .card-header {
+        align-items: flex-start;
+    }
+
+    /* --- Adjust timeline for narrow view --- */
+    .timeline::after {
+        left: 5px;
+    }
+    .timeline-item {
+        padding-left: 30px;
+    }
+    .timeline-dot {
+        top: 24px; /* Re-align dot for mobile padding */
+        left: -4px;
+        width: 18px;
+        height: 18px;
     }
 }
