@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjith Saila | Data Analytics Consultant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .timeline-content .card-header, .education-card .card-header, .cert-card .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .company-logo, .institution-logo, .cert-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 8px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background-color: #f0f0f0; /* Light background for placeholder */
+        }
+        .institution, .company a, .institution a, .cert-card h3 a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .company a:hover, .institution a:hover, .cert-card h3 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-info">
+                <div class="profile-picture-container">
+                    <img src="icon.jpg" alt="Ranjith Saila">
+                </div>
+                <div>
+                    <h1>Ranjith Kumar Saila</h1>
+                    <h2>Data Analytics Consultant</h2>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active" data-target="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#projects" class="nav-link" data-target="projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#experience" class="nav-link" data-target="experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#education" class="nav-link" data-target="education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#certifications" class="nav-link" data-target="certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+                </ul>
+            </nav>
+
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/ranjith-kumar-saila-1708r/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/RANJITH1708" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.kaggle.com/ranjithsaila" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="home" class="content-section active">
+            <h2 class="section-title">Welcome</h2>
+            <div class="card">
+                <h3>About Me</h3>
+                <p>A Data Analytics professional with a Master's in Business Analytics and multiple years of experience in data analysis. I excel at leveraging internal and external data to analyze product performance, identify growth opportunities, and develop reports and scorecards for senior management. With a proven ability to use SQL, Excel, and business intelligence tools, I am adept at translating complex data into actionable recommendations to drive business objectives.</p>
+            </div>
+             <div class="card">
+                <h3>Technical Proficiencies</h3>
+                <div class="skills-grid">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">R</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Power BI</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">MS SQL Server</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">Firebase</span>
+                    <span class="skill-item">Advanced Excel</span>
+                    <span class="skill-item">Git & GitHub</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="circadian128.png" alt="Circadian Icon" class="project-icon">
+                    <h3>My Circadian - Screen Shader</h3>
+                    <p class="project-role">Lead Developer | Chrome Extension</p>
+                    <p>A screen-shading extension that automatically adjusts screen color and brightness based on a user-defined schedule to support natural sleep cycles. Features customizable themes, animations, and manual overrides.</p>
+                    <div class="project-links">
+                        <a href="https://chromewebstore.google.com/detail/my-circadian/femmajfmdpemdkkjdgooimlhbkchbhla" target="_blank">View on Chrome Store <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="icon128.png" alt="Supbyte Icon" class="project-icon">
+                    <h3>Supbyte - Sound Booster & Equalizer</h3>
+                    <p class="project-role">Lead Developer | Chrome Extension</p>
+                    <p>Engineered and launched a browser extension on the Google Chrome Web Store. Implemented core features including volume boosting, a 5-band equalizer, and an audio compressor using vanilla JavaScript and Chrome APIs.</p>
+                    <div class="project-links">
+                        <a href="https://chromewebstore.google.com/detail/bdiihbekcobpmjfgoiimehpgiokihaed" target="_blank">View on Chrome Store <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="tablelens128.png" alt="TableLens Icon" class="project-icon">
+                    <h3>TableLens - Edit, Visualize & Export Tables</h3>
+                    <p class="project-role">Lead Developer | Chrome Extension</p>
+                    <p>An advanced browser extension for exporting, live-editing, filtering, sorting, and visualizing HTML tables. Create charts directly from web data.</p>
+                    <div class="project-links">
+                        <a href="https://chromewebstore.google.com/detail/tablelens-edit-visualize/lahononablbbfocabaeliibgiicgbjkl" target="_blank">View on Chrome Store <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="oklahoma_crime_icon.png" alt="Oklahoma Crime Project Icon" class="project-icon">
+                    <h3>Oklahoma Crime Data Analysis</h3>
+                    <p class="project-role">Data Analyst | MySQL, Python, Power BI</p>
+                    <p>Designed a normalized MySQL database and analyzed crime records to uncover trends. Developed a Random Forest model (R²=0.9597) and created Power BI dashboards to visualize key findings.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/RANJITH1708/Oklahoma_Crime_Data" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="amex_icon.png" alt="AMEX Project Icon" class="project-icon">
+                    <h3>AMEX Credit Card Default Prediction</h3>
+                    <p class="project-role">Predictive Analytics | Python, Scikit-learn, SAS Miner</p>
+                    <p>Developed credit card default prediction models for American Express using Logistic Regression, Random Forest, and Neural Networks, achieving ~92% predictive accuracy.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/RANJITH1708/AMEX-Predicting-Credit-Card-Default-Risk" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="fertilizer_icon.png" alt="Fertilizer Project Icon" class="project-icon">
+                    <h3>Predicting Optimal Fertilizers</h3>
+                    <p class="project-role">Kaggle Competition | Python, XGBoost, Optuna</p>
+                    <p>Achieved a Kaggle score of 0.35408 by developing an ensemble of XGBoost/LightGBM models optimized with Optuna for a multi-class classification challenge.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/RANJITH1708/Predicting-Optimal-Fertilizers" target="_blank">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="content-section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="ceaspay_logo.png" alt="Ceaspay Logo" class="company-logo">
+                            <div>
+                                <h3>Data Analyst Consultant</h3>
+                                <p class="company"><a href="https://www.ceaspay.com/" target="_blank">Ceaspay</a> | Feb 2025 – Present</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Developed a multi-user web app with Firebase, improving agent efficiency by 40% with real-time data sync.</li>
+                            <li>Engineered an admin dashboard with Chart.js to visualize KPIs, reducing the compensation cycle time by 50%.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="hazon_logo.png" alt="Hazon Technologies Logo" class="company-logo">
+                            <div>
+                                <h3>Data Analyst</h3>
+                                <p class="company"><a href="https://hazontechno.com/" target="_blank">Hazon Technologies</a> | Aug 2020 - Jul 2022</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Developed statistical models in Python for the RISE platform to predict institutional ranking outcomes.</li>
+                            <li>Created Power BI dashboards to visualize model outputs, helping clients identify areas for score improvement.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="shriram_logo.png" alt="Shriram Life Insurance Logo" class="company-logo">
+                            <div>
+                                <h3>Insurance Agent Trainee</h3>
+                                <p class="company"><a href="https://www.shriramlife.com/" target="_blank">Shriram Life Insurance</a> | May 2020 – Jul 2020</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Conducted in-depth needs analysis for over 30 clients to develop tailored insurance solutions, securing 9 policy sales.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="greengang_logo.png" alt="Green Gang Arts Logo" class="company-logo">
+                            <div>
+                                <h3>Project Coordinator</h3>
+                                <p class="company"><a href="https://www.greengangarts.com/" target="_blank">Green Gang Arts</a> | Mar 2018 – Jan 2020</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Coordinated timelines and resources for over 50 projects, achieving a 100% on-time delivery rate.</li>
+                            <li>Improved operational efficiency by 10% by streamlining project data management using Excel.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <div class="card-header">
+                            <img src="johnsbusiness_logo.png" alt="John’s Business School Logo" class="company-logo">
+                            <div>
+                                <h3>Accounting Trainee</h3>
+                                <p class="company"><a href="https://johnsbusinessschool.com/" target="_blank">John’s Business School</a> | Mar 2019 – Jul 2019</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Processed and reconciled financial data, ensuring 100% compliance and accuracy in monthly journal entries and reports.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="content-section">
+            <h2 class="section-title">Education</h2>
+            <div class="card-grid">
+                <div class="card education-card">
+                    <div class="card-header">
+                        <img src="uco_logo.png" alt="University of Central Oklahoma Logo" class="institution-logo">
+                        <div>
+                           <h3>Master of Science in Business Analytics</h3>
+                            <p class="institution">
+                                <a href="https://www.uco.edu/programs/jcgs/cob/isom/business-analytics" target="_blank">University of Central Oklahoma</a>
+                            </p>
+                        </div>
+                    </div>
+                    <span class="duration">Graduated Dec 2024</span>
+                </div>
+                <div class="card education-card">
+                    <div class="card-header">
+                        <img src="icfai_logo.png" alt="ICFAI Business School Logo" class="institution-logo">
+                        <div>
+                            <h3>Bachelor of Business Administration</h3>
+                            <p class="institution">
+                                <a href="https://www.icfaiuniversity.in/ifhe/bba-program.html" target="_blank">ICFAI Business School</a>
+                            </p>
+                        </div>
+                    </div>
+                    <span class="duration">Graduated May 2020</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="content-section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="card-grid">
+                <div class="card cert-card">
+                    <div class="card-header">
+                         <img src="cssc_logo.png" alt="The Council for Six Sigma Certification Logo" class="cert-logo">
+                         <div>
+                             <h3><a href="https://certification.sixsigmacouncil.org/mod/customcert/verify_certificate.php?contextid=88" target="_blank">Six Sigma Green Belt Certification – Standard & Level II</a></h3>
+                             <p>The Council for Six Sigma Certification (CSSC) | Sep 2025</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="card cert-card">
+                    <div class="card-header">
+                         <img src="pmi_logo.png" alt="Project Management Institute Logo" class="cert-logo">
+                         <div>
+                             <h3><a href="https://www.credly.com/badges/bad88efc-891b-41e9-803d-5650ad63ff1c/public_url" target="_blank">Fundamentals of Agile Project Management</a></h3>
+                             <p>Project Management Institute | Sep 2025</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="card cert-card">
+                   <div class="card-header">
+                        <img src="google_cert_logo.png" alt="Google Data Analytics Logo" class="cert-logo">
+                        <div>
+                            <h3><a href="https://www.credly.com/badges/a2c8c7d9-7665-4250-a670-d13fa49958a6/public_url" target="_blank">Google Data Analytics Professional Certificate</a></h3>
+                            <p>Coursera / Google | Mar 2022</p>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
